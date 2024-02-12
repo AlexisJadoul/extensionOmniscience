@@ -34,21 +34,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.getElementById('save-pdf').addEventListener('click', function() {
+    
+    if (window.jspdf && window.jspdf.jsPDF) {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
-        doc.text('Agents Sélectionnés:', 10, 10);
-
-        let yPos = 20;
-        personnages.forEach(personnage => {
-            doc.text(`${personnage.nom} (${personnage.role})`, 10, yPos);
-            yPos += 10;
+        document.getElementById('save-pdf').addEventListener('click', function() {
+            const jsPDF = window.jspdf.jsPDF; // Correction ici
+            const doc = new jsPDF();
+        
+            doc.text("Hello world!", 10, 10);
+            doc.save("a4.pdf");
         });
+    } else {
+        console.error('jsPDF n\'est pas chargé correctement.');
+    }
 
-        if (personnages.length === 0) {
-            doc.text('Aucun agent sélectionné.', 10, yPos);
-        }
-
-        doc.save('agents-selectionnes.pdf');
+    document.getElementById('save-pdf').addEventListener('click', function() {
+        const jsPDF = window.jspdf.jsPDF; // Correction ici
+        const doc = new jsPDF();
+    
+        doc.text("Hello world!", 10, 10);
+        doc.save("a4.pdf");
     });
 });

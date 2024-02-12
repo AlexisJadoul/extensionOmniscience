@@ -17,7 +17,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["details.html", "details.js"],
+      "resources": ["details.html", "details.js", "lib/jspdf.umd.min.js"],
       "matches": ["<all_urls>"]
     }
   ],
