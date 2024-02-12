@@ -49,25 +49,55 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('jsPDF n\'est pas chargé correctement.');
     }
 
-    document.getElementById('save-pdf').addEventListener('click', function() {
-        const jsPDF = window.jspdf.jsPDF; // Correction ici
-        const doc = new jsPDF();
-    
-        chrome.storage.local.get('selectedPersonnages', function(data) {
-            const personnages = data.selectedPersonnages || [];
-            doc.text('Agents Sélectionnés:', 10, 10);
-    
-            let yPos = 20;
-            personnages.forEach(personnage => {
+   // Fonction hypothétique pour charger une image et la convertir en Data URL
+function loadImageAsDataURL(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            callback(reader.result);
+        }
+        reader.readAsDataURL(xhr.response);
+    };
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+    xhr.send();
+}
+
+document.getElementById('save-pdf').addEventListener('click', function() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    chrome.storage.local.get('selectedPersonnages', function(data) {
+        const personnages = data.selectedPersonnages || [];
+        let yPos = 20;
+
+        // Fonction asynchrone pour ajouter chaque personnage au PDF
+        async function addPersonnagesToPDF(personnages) {
+            for (const personnage of personnages) {
+                // Ajouter le texte
                 doc.text(`${personnage.nom} (${personnage.role})`, 10, yPos);
                 yPos += 10;
-            });
-    
-            if (personnages.length === 0) {
-                doc.text('Aucun agent sélectionné.', 10, yPos);
+
+                // Charger et ajouter l'image
+                if (personnage.image) {
+                    await new Promise((resolve, reject) => {
+                        loadImageAsDataURL(personnage.image, function(dataUrl) {
+                            // Ajouter l'image au PDF
+                            doc.addImage(dataUrl, 'JPEG', 10, yPos, 30, 30);
+                            yPos += 35; // Ajuster l'espace pour la prochaine entrée
+                            resolve();
+                        });
+                    });
+                }
             }
-    
+
+            // Tous les personnages ont été ajoutés, sauvegarder le PDF
             doc.save('agents-selectionnes.pdf');
-        });
+        }
+
+        addPersonnagesToPDF(personnages).catch(console.error);
     });
+});
+
 });
