@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Extension Omniscience Valorant",
+  "version": "1.0",
+  "description": "Affiche les personnages de Valorant et permet de sélectionner vos favoris.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["details.html", "details.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "permissions": ["storage", "activeTab", "tabs"]
+}

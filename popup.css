@@ -1,0 +1,42 @@
+#personnages-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.personnage {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-left: 8px;
+}
+body {
+    background-color: #253254; /* Bleu clair, vous pouvez ajuster la couleur selon vos préférences */
+    width: 480px; /* Ajustez la largeur selon vos besoins */
+    height: 100px;
+    margin-top: 50px 
+}
+
+body, html {
+    width: 300px;
+    padding: 10px;
+}
+
+#personnages-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.personnage {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-left: 8px;
+}
+
+#confirmation-message {
+    color: green;
+    margin-top: 10px;
+}
+

@@ -1,0 +1,634 @@
+[
+  {
+    "id": "astra",
+    "nom": "Astra",
+    "role": "Contrôleur",
+    "origine": "Ghana",
+    "specification": ["fumeur", "aveuglant", "étourdissement", "prise de zone"],
+    "spell": [
+      {
+        "nom": "Nova Pulse",
+        "description": "Placez des étoiles en forme astrale (touche Ultime). ACTIVEZ une étoile pour déclencher une Impulsion Nova. L'Impulsion Nova se charge brièvement puis frappe, étourdissant tous les joueurs dans sa zone."
+      },
+      {
+        "nom": "Nebula / Dissipate",
+        "description": "Placez des étoiles en forme astrale (touche Ultime). ACTIVEZ une étoile pour la transformer en une Nébuleuse (fumée). UTILISEZ une étoile pour la Dissiper, la retournant pour être placée dans un nouvel emplacement après un délai. La Dissipation forme brièvement une fausse Nébuleuse à l'emplacement de l'étoile avant de revenir."
+      },
+      {
+        "nom": "Gravity Well",
+        "description": "Placez des étoiles en forme astrale (touche Ultime). ACTIVEZ une étoile pour former un Puits de Gravité. Les joueurs dans la zone sont attirés vers le centre avant qu'il n'explose, rendant tous les joueurs toujours piégés à l'intérieur Vulnérables."
+      },
+      {
+        "nom": "Astral Form / Cosmic Divide",
+        "description": "ACTIVEZ pour entrer en Forme Astrale où vous pouvez placer des étoiles avec TIR PRINCIPAL. Les étoiles peuvent être réactivées plus tard, les transformant en Impulsion Nova, Nébuleuse ou Puits de Gravité. Lorsque la Division Cosmique est chargée, utilisez TIR ALTERNATIF en Forme Astrale pour commencer à la viser, puis TIR pour sélectionner deux emplacements. Une Division Cosmique infinie relie les deux points que vous sélectionnez. La Division Cosmique bloque les balles et le son."
+      },
+      {
+        "nom": "Astral Form",
+        "description": "ACTIVEZ l'Ultime pour entrer en Forme Astrale et TIR PRINCIPAL pour placer des étoiles. Visez les étoiles avec votre Impulsion Nova, Nébuleuse ou Puits de Gravité pour utiliser ces capacités."
+      }
+    ],
+    "description": "Astra utilise les énergies du cosmos pour façonner le champ de bataille à sa guise.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/displayicon.png"
+  },
+  {
+    "id": "breach",
+    "nom": "Breach",
+    "role": "Initiateur",
+    "origine": "",
+    "specification": ["fumeur", "aveuglant", "étourdissement", "prise de zone"],
+    "spell": [
+      {
+        "nom": "Point de Flash",
+        "description": "ÉQUIPEZ une charge aveuglante. TIREZ la charge pour lancer une rafale rapide à travers le mur. La charge explose pour aveugler tous les joueurs qui la regardent."
+      },
+      {
+        "nom": "Ligne de Faille",
+        "description": "ÉQUIPEZ une explosion sismique. MAINTENEZ LE FEU pour augmenter la distance. RELÂCHEZ pour déclencher le séisme, étourdissant tous les joueurs dans sa zone et en une ligne jusqu'à la zone."
+      },
+      {
+        "nom": "Réplique",
+        "description": "ÉQUIPEZ une charge de fusion. TIREZ la charge pour lancer une rafale lente à travers le mur. La rafale inflige des dégâts importants à quiconque se trouve dans sa zone."
+      },
+      {
+        "nom": "Tonnerre Roulant",
+        "description": "ÉQUIPEZ une Charge Sismique. TIREZ pour envoyer un séisme en cascade à travers tous les terrains dans un grand cône. Le séisme étourdit et projette en l'air quiconque se trouve pris dedans."
+      }
+    ],
+    "description": "Le Suédois bionique Breach tire de puissantes rafales cinétiques ciblées pour ouvrir agressivement un chemin à travers le terrain ennemi. Les dégâts et les perturbations qu'il inflige garantissent qu'aucun combat n'est jamais équitable.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/displayicon.png"
+  },
+  {
+    "id": "brimstone",
+    "nom": "Brimstone",
+    "role": "Contrôleur",
+    "origine": "États-Unis",
+    "specification": ["fumeur", "aveuglant", "étourdissement", "prise de zone"],
+    "spell": [
+      {
+        "nom": "Stim Beacon",
+        "description": "LANCER instantanément un stimulant. À l'atterrissage, il crée un champ qui accorde aux joueurs un stimulant de combat et un bonus de vitesse."
+      },
+      {
+        "nom": "Incendiary",
+        "description": "ÉQUIPEZ un lance-grenades incendiaires. TIREZ pour lancer une grenade qui explose en touchant le sol, créant une zone de feu persistante qui inflige des dégâts aux joueurs à l'intérieur de la zone."
+      },
+      {
+        "nom": "Sky Smoke",
+        "description": "ÉQUIPEZ une carte tactique. TIREZ pour définir les emplacements où les nuages de fumée de Brimstone atterriront. ALT FIRE pour confirmer, lançant des nuages de fumée durables qui bloquent la vision dans la zone sélectionnée."
+      },
+      {
+        "nom": "Orbital Strike",
+        "description": "ÉQUIPEZ une carte tactique. TIREZ pour lancer un laser orbital persistant sur l'emplacement sélectionné, infligeant des dégâts importants aux joueurs piégés dans la zone sélectionnée."
+      }
+    ],
+    "description": "Originaire des États-Unis, l'arsenal orbital de Brimstone assure toujours l'avantage à son équipe. Sa capacité à fournir précisément et en toute sécurité des utilitaires en fait le commandant inégalé sur le terrain.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/9f0d8ba9-4140-b941-57d3-a7ad57c6b417/displayicon.png"
+  },
+
+  {
+    "id": "chamber",
+    "nom": "Chamber",
+    "role": "Sentinelle",
+    "origine": "France",
+    "specification": ["fumeur", "aveuglant", "étourdissement", "prise de zone"],
+    "spell": [
+      {
+        "nom": "Rendezvous",
+        "description": "ÉQUIPEZ une ancre de téléportation. TIREZ pour la placer au sol. Une fois au sol et à portée de l'ancre, RÉACTIVEZ pour téléporter rapidement à l'ancre. L'ancre peut être ramassée pour être REDEPLOYÉE."
+      },
+      {
+        "nom": "Marque de Fabrique",
+        "description": "ÉQUIPEZ un piège qui scanne les ennemis. TIREZ pour le placer au sol. Lorsqu'un ennemi visible se trouve à portée, le piège décompte puis déstabilise le terrain autour d'eux, créant un champ persistant qui ralentit les joueurs piégés à l'intérieur. Le piège peut être ramassé pour être REDEPLOYÉ."
+      },
+      {
+        "nom": "Headhunter",
+        "description": "ACTIVEZ pour équiper un pistolet lourd. TIR ALTERNATIF avec le pistolet équipé pour viser avec les lunettes de visée."
+      },
+      {
+        "nom": "Tour De Force",
+        "description": "ACTIVEZ pour invoquer un puissant fusil de sniper personnalisé qui tuera un ennemi avec un tir direct dans le haut du corps. TIR ALTERNATIF pour viser avec les lunettes de visée. Tuer un ennemi crée un champ persistant qui ralentit les joueurs piégés à l'intérieur."
+      }
+    ],
+    "description": "Bien habillé et bien armé, le concepteur d'armes français Chamber expulse les agresseurs avec une précision mortelle. Il exploite son arsenal sur mesure pour tenir la ligne et éliminer les ennemis de loin, avec une stratégie prévue pour chaque plan.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/displayicon.png"
+  },
+
+  {
+    "id": "cypher",
+    "nom": "Cypher",
+    "role": "Sentinelle",
+    "origine": "Maroc",
+    "specification": ["fumeur", "aveuglant", "étourdissement", "prise de zone"],
+    "spell": [
+      {
+        "nom": "Cage Cybernétique",
+        "description": "LANCER INSTANTANÉMENT la cage cybernétique devant Cypher. ACTIVEZ pour créer une zone qui bloque la vision et émet un signal audio lorsque les ennemis la traversent."
+      },
+      {
+        "nom": "Spycam",
+        "description": "ÉQUIPEZ une caméra espionne. TIREZ pour placer la caméra espionne à l'emplacement ciblé. RÉUTILISEZ cette capacité pour prendre le contrôle de la vue de la caméra. En contrôlant la caméra, TIREZ pour tirer une fléchette de marquage. Cette fléchette révélera l'emplacement de tout joueur touché par la fléchette. Cette capacité peut être ramassée pour être REDÉPLOYÉE."
+      },
+      {
+        "nom": "Fil de Piège",
+        "description": "ÉQUIPEZ un fil de piège. TIREZ pour placer un fil de piège destructible et discret à l'emplacement ciblé, créant une ligne qui s'étend entre l'emplacement placé et le mur opposé. Les joueurs ennemis qui traversent un fil de piège seront Ligotés, Révélés et Étourdis après un court laps de temps s'ils ne détruisent pas le dispositif à temps. Cette capacité peut être ramassée pour être REDÉPLOYÉE."
+      },
+      {
+        "nom": "Vol Neural",
+        "description": "UTILISEZ INSTANTANÉMENT sur un ennemi mort ciblé pour télécharger des informations sur leur équipe. Après un bref délai, l'emplacement de tous les joueurs ennemis vivants sera Révélé deux fois."
+      }
+    ],
+    "description": "Le courtier en informations marocain, Cypher, est un réseau de surveillance à lui seul qui garde un œil sur chaque mouvement de l'ennemi. Aucun secret n'est à l'abri. Aucune manœuvre n'échappe à son regard. Cypher observe toujours.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/displayicon.png"
+  },
+  {
+    "id": "deadlock",
+    "nom": "Deadlock",
+    "role": "Sentinelle",
+    "origine": "Norvège",
+    "specification": ["fumeur", "aveuglant", "étourdissement", "prise de zone"],
+    "spell": [
+      {
+        "nom": "Capteur Sonique",
+        "description": "ÉQUIPEZ un Capteur Sonique. TIREZ pour déployer. Le capteur surveille une zone à la recherche d'ennemis faisant du bruit. Il étourdit cette zone si des pas, des tirs d'armes ou un bruit significatif sont détectés. Cette capacité peut être ramassée pour être REDÉPLOYÉE."
+      },
+      {
+        "nom": "Maille de Barrière",
+        "description": "ÉQUIPEZ un disque de Maille de Barrière. TIREZ pour lancer vers l'avant. À l'atterrissage, le disque génère des barrières à partir du point d'origine qui bloquent le mouvement des personnages."
+      },
+      {
+        "nom": "GravNet",
+        "description": "ÉQUIPEZ une grenade GravNet. TIREZ pour lancer. TIR ALTERNATIF pour l'envoyer en cloche. Le GravNet explose à l'atterrissage, contraignant tous les personnages pris à l'intérieur à se baisser et à se déplacer lentement."
+      },
+      {
+        "nom": "Anéantissement",
+        "description": "ÉQUIPEZ un Accélérateur de Nanofil. TIREZ pour libérer une impulsion de nanofils qui capture le premier ennemi contacté. L'ennemi enveloppé est tiré le long d'un chemin de nanofil et mourra s'il atteint la fin, à moins d'être libéré. Le cocon de nanofil est destructible."
+      }
+    ],
+    "description": "L'opératrice norvégienne Deadlock déploie une série de nanofils de pointe pour sécuriser le champ de bataille contre les attaques les plus létales. Personne n'échappe à sa surveillance vigilante, ni ne survit à sa férocité impitoyable.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235/displayicon.png"
+  },
+  {
+    "id": "jett",
+    "nom": "Jett",
+    "role": "Duelliste",
+    "origine": "Corée du Sud",
+    "specification": ["fumeur", "aveuglant", "étourdissement", "prise de zone"],
+    "spell": [
+      {
+        "nom": "Ascension",
+        "description": "PROPELLE instantanément Jett haut dans les airs."
+      },
+      {
+        "nom": "Vent Arrière",
+        "description": "ACTIVEZ pour préparer une bourrasque de vent pendant un temps limité. RÉUTILISEZ le vent pour propulser Jett dans la direction où elle se déplace. Si Jett est immobile, elle est propulsée vers l'avant. La charge de Vent Arrière se réinitialise après chaque deux éliminations."
+      },
+      {
+        "nom": "Brouillard Nuageux",
+        "description": "LANCER instantanément un projectile qui se transforme en un nuage de fumée bloquant la vision pendant un court instant au moment de l'impact avec une surface. MAINTENEZ la touche de la capacité enfoncée pour courber la fumée dans la direction de votre viseur."
+      },
+      {
+        "nom": "Tempête de Lames",
+        "description": "ÉQUIPEZ un ensemble de couteaux de lancer hautement précis. TIREZ pour lancer un seul couteau et recharger les couteaux après une élimination. TIR ALTERNATIF pour lancer tous les couteaux restants mais ne recharge pas après une élimination."
+      },
+      {
+        "nom": "Dérive",
+        "description": "Maintenir le bouton de saut enfoncé pendant la chute vous permet de glisser dans les airs."
+      }
+    ],
+    "description": "Représentant son pays d'origine, la Corée du Sud, le style de combat agile et évasif de Jett lui permet de prendre des risques que personne d'autre ne peut prendre. Elle tourne autour de chaque escarmouche, découpant les ennemis avant même qu'ils ne sachent ce qui les a frappés.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png"
+  },
+  {
+    "id": "phoenix",
+    "nom": "Phoenix",
+    "role": "Duelliste",
+    "origine": "Royaume-Uni",
+    "specification": ["fumeur", "aveuglant", "brûlant", "prise de zone"],
+    "spell": [
+      {
+        "nom": "Mur de Flammes",
+        "description": "ÉQUIPEZ un mur de flammes. TIREZ pour créer une ligne de flammes qui avance, créant un mur de feu qui bloque la vision et inflige des dégâts aux joueurs qui le traversent. Le mur de feu soigne Phoenix au lieu de causer des dégâts. MAINTENEZ ENFONCÉ pour courber le mur dans la direction de votre viseur."
+      },
+      {
+        "nom": "Boule Courbe",
+        "description": "ÉQUIPEZ une boule éclairante qui suit un chemin courbe et explose peu de temps après avoir été lancée. TIREZ pour courber la boule éclairante vers la gauche, explosant et aveuglant tout joueur qui voit la boule. TIR ALTERNATIF pour courber la boule éclairante vers la droite."
+      },
+      {
+        "nom": "Mains Chaudes",
+        "description": "ÉQUIPEZ une boule de feu. TIREZ pour lancer une boule de feu qui explose après un certain temps ou au moment où elle touche le sol, créant une zone de feu persistante qui inflige des dégâts aux ennemis. La zone de feu soigne Phoenix au lieu de causer des dégâts. TIR ALTERNATIF pour lancer."
+      },
+      {
+        "nom": "Va-y Fonce",
+        "description": "PLACEZ instantanément un marqueur à l'emplacement de Phoenix. Pendant que cette capacité est active, mourir ou laisser le chronomètre expirer mettra fin à cette capacité et ramènera Phoenix à cet emplacement avec toute sa santé et la quantité d'armure qu'il avait lorsque la capacité a été lancée."
+      },
+      {
+        "nom": "Échauffement",
+        "description": "Guérit passivement Phoenix au lieu de subir des dégâts lorsqu'il se tient dans son propre feu."
+      }
+    ],
+    "description": "Originaire du Royaume-Uni, le pouvoir étoilé de Phoenix brille à travers son style de combat, enflammant le champ de bataille avec éclat et flamboiement. Qu'il ait des renforts ou non, il se précipite pour combattre selon ses propres termes.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/eb93336a-449b-9c1b-0a54-a891f7921d69/displayicon.png"
+  },
+  {
+    "id": "sage",
+    "nom": "Sage",
+    "role": "Sentinelle",
+    "origine": "Chine",
+    "specification": [
+      "ralentissant",
+      "soignant",
+      "barricadant",
+      "ressuscitant"
+    ],
+    "spell": [
+      {
+        "nom": "Orbe de Ralentissement",
+        "description": "ÉQUIPEZ un orbe de ralentissement. TIREZ pour lancer un orbe de ralentissement vers l'avant qui explose à l'impact, créant une zone persistante qui ralentit les joueurs pris à l'intérieur."
+      },
+      {
+        "nom": "Orbe de Guérison",
+        "description": "ÉQUIPEZ un orbe de guérison. TIREZ avec votre viseur sur un allié blessé pour activer un soin progressif sur lui. TIR ALTERNATIF lorsque Sage est blessée pour activer un auto-soin progressif."
+      },
+      {
+        "nom": "Orbe Barrière",
+        "description": "ÉQUIPEZ un orbe barrière. TIREZ pour placer un mur qui se renforce après quelques secondes. TIR ALTERNATIF fait pivoter le viseur."
+      },
+      {
+        "nom": "Résurrection",
+        "description": "ÉQUIPEZ une capacité de résurrection. TIREZ avec votre viseur placé sur un allié mort pour commencer à le ressusciter. Après un bref canalisation, l'allié sera ramené à la vie avec toute sa santé."
+      }
+    ],
+    "description": "Bastion de la Chine, Sage crée la sécurité pour elle-même et son équipe où qu'elle aille. Capable de ressusciter des amis tombés et de repousser les assauts violents, elle offre un centre calme sur un champ de bataille infernal.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/569fdd95-4d10-43ab-ca70-79becc718b46/displayicon.png"
+  },
+  {
+    "id": "sova",
+    "nom": "Sova",
+    "role": "Initiateur",
+    "origine": "Russie",
+    "specification": ["suivi", "repérage", "élimination", "efficacité"],
+    "spell": [
+      {
+        "nom": "Flèche de Choc",
+        "description": "ÉQUIPEZ un arc avec une flèche de choc. TIREZ pour envoyer la flèche explosive vers l'avant, qui explose au contact et endommage les joueurs à proximité. MAINTENEZ LA POIGNÉE enfoncée pour augmenter la portée du projectile. TIR ALTERNATIF pour ajouter jusqu'à deux rebonds à cette flèche."
+      },
+      {
+        "nom": "Flèche de Reconnaissance",
+        "description": "ÉQUIPEZ un arc avec une flèche de reconnaissance. TIREZ pour envoyer la flèche de reconnaissance vers l'avant, activant au contact et Révélant l'emplacement des ennemis à proximité pris dans le champ de vision de la flèche. Les ennemis peuvent détruire cette flèche. MAINTENEZ LA POIGNÉE enfoncée pour augmenter la portée du projectile. TIR ALTERNATIF pour ajouter jusqu'à deux rebonds à cette flèche."
+      },
+      {
+        "nom": "Drone Chouette",
+        "description": "ÉQUIPEZ un drone chouette. TIREZ pour déployer et prendre le contrôle du mouvement du drone. En prenant le contrôle du drone, TIREZ pour tirer une fléchette de marquage. Cette fléchette Révèle l'emplacement de tout joueur touché par la fléchette. Les ennemis peuvent détruire le Drone Chouette."
+      },
+      {
+        "nom": "Fureur du Chasseur",
+        "description": "ÉQUIPEZ un arc avec trois rafales d'énergie longue portée traversant les murs. TIREZ pour libérer une rafale d'énergie en ligne devant Sova, infligeant des dégâts et Révélant l'emplacement des ennemis pris dans la ligne. Cette capacité peut être RÉUTILISÉE jusqu'à deux fois de plus pendant que le chronomètre de la capacité est actif."
+      },
+      {
+        "nom": "Tireur d'Élite Étonnant",
+        "description": "L'arc personnalisé de Sova peut tirer ses flèches et les faire rebondir sur le terrain. En maintenant le bouton enfoncé, la puissance de l'arc se charge et la flèche est libérée lorsqu'elle est relâchée. Appuyez sur TIR ALTERNATIF pour changer le nombre de rebonds. Vos flèches peuvent rebondir sur le terrain. En maintenant le clic gauche enfoncé, la portée de l'arc augmente. En cliquant avec le bouton droit, faites défiler le nombre souhaité de rebonds sur le terrain. La flèche est libérée lorsque le clic gauche est relâché."
+      }
+    ],
+    "description": "Né de l'hiver éternel de la toundra russe, Sova traque, trouve et élimine les ennemis avec une efficacité et une précision impitoyables. Son arc personnalisé et ses incroyables capacités de repérage garantissent que même si vous fuyez, vous ne pouvez pas vous cacher.",
+    "image": "https://titles.trackercdn.com/valorant-api/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png"
+  },
+  {
+    "id": "fade",
+    "nom": "Fade",
+    "role": "Initiateur",
+    "origine": "Turquie",
+    "specification": [
+      "chasseur de primes",
+      "cauchemar",
+      "révélation",
+      "terrorisation"
+    ],
+    "spell": [
+      {
+        "nom": "Saisie",
+        "description": "ÉQUIPEZ un nœud de peur brute. TIREZ pour lancer. Le nœud tombe après un temps défini. RÉUTILISEZ pour lâcher le nœud plus tôt. Le nœud se rompt à l'impact, immobilisant les ennemis à proximité. Les ennemis immobilisés sont Assourdis et Corrompus."
+      },
+      {
+        "nom": "Hantise",
+        "description": "ÉQUIPEZ un observateur hanté. TIREZ pour lancer. L'observateur tombe après un temps défini. RÉUTILISEZ pour lâcher l'observateur plus tôt. L'observateur frappe à l'impact, Révélant les ennemis dans sa ligne de mire et créant des traînées de terreur vers eux. Les ennemis peuvent détruire l'observateur."
+      },
+      {
+        "nom": "Rôdeur",
+        "description": "ÉQUIPEZ un rôdeur. TIREZ pour envoyer le rôdeur vers l'avant. MAINTENEZ LA POIGNÉE enfoncée pour diriger le rôdeur vers votre viseur. Le rôdeur poursuivra le premier ennemi ou la première traînée de terreur qu'il voit, et Aveuglera l'ennemi à l'impact."
+      },
+      {
+        "nom": "Chute de la Nuit",
+        "description": "ÉQUIPEZ le pouvoir du cauchemar lui-même. TIREZ pour déchaîner une vague d'énergie de cauchemar imparable. Les ennemis pris dans la vague sont Marqués par des traînées de terreur, Assourdis et Corrompus."
+      }
+    ],
+    "description": "La chasseuse de primes turque, Fade, libère le pouvoir du cauchemar brut pour saisir les secrets ennemis. Accordée avec la terreur elle-même, elle traque les cibles et révèle leurs plus grandes peurs - avant de les écraser dans l'obscurité."
+  },
+  {
+    "id": "gekko",
+    "nom": "Gekko",
+    "role": "Initiateur",
+    "origine": "Los Angeles",
+    "specification": [
+      "calamiteux",
+      "conduite de groupe",
+      "chasse",
+      "recomposition"
+    ],
+    "spell": [
+      {
+        "nom": "Aide de l'Ailé",
+        "description": "ÉQUIPEZ Aile. TIREZ pour envoyer Aile chercher les ennemis. Aile déclenche une explosion concussive vers le premier ennemi qu'il voit. ALT FIRE lors du ciblage d'un site Spike ou d'un Spike planté pour avoir Aile désamorcer ou planter le Spike. Pour planter, Gekko doit avoir le Spike dans son inventaire. Lorsque Aile expire, il redevient une globule dormante. INTERAGISSEZ pour récupérer la globule et obtenir une autre charge d'Aile après un court temps de recharge."
+      },
+      {
+        "nom": "Tournoiement",
+        "description": "ÉQUIPEZ Tournoiement. TIREZ pour envoyer Tournoiement s'envoler dans les airs. Tournoiement se charge puis déclenche des rafales de plasma sur les ennemis en ligne de mire. Les ennemis touchés par son plasma sont Aveuglés. Lorsque Tournoiement expire, elle redevient une globule dormante. INTERAGISSEZ pour récupérer la globule et obtenir une autre charge de Tournoiement après un court temps de recharge."
+      },
+      {
+        "nom": "Pitaya",
+        "description": "ÉQUIPEZ Pitaya. TIREZ pour lancer Pitaya comme une grenade. ALT FIRE pour lobber. À l'atterrissage, Pitaya se duplique sur une grande zone qui inflige un faible montant de dégâts dans le temps puis explose après un court délai."
+      },
+      {
+        "nom": "Frénésie",
+        "description": "ÉQUIPEZ Frénésie. TIREZ pour vous lier à l'esprit de Frénésie et la diriger à travers le territoire ennemi. ACTIVEZ pour vous précipiter en avant et exploser, Arrêtant tous les joueurs dans un petit rayon. Lorsque Frénésie expire, elle redevient une globule dormante. INTERAGISSEZ pour récupérer la globule et obtenir une autre charge de Frénésie après un court temps de recharge. Frénésie peut être récupérée une fois."
+      }
+    ],
+    "description": "Gekko, l'Angeleno, dirige une équipe soudée de créatures calamiteuses. Ses amis bondissent en avant, dispersant les ennemis, tandis que Gekko les poursuit pour se regrouper et recommencer."
+  },
+  {
+    "id": "harbor",
+    "nom": "Harbor",
+    "role": "Contrôleur",
+    "origine": "Côte de l'Inde",
+    "specification": [
+      "ancienne technologie",
+      "domination de l'eau",
+      "protection",
+      "dommages"
+    ],
+    "spell": [
+      {
+        "nom": "Crique",
+        "description": "ÉQUIPEZ une sphère d'eau protectrice. TIREZ pour lancer. ALT FIRE pour lobber. À l'impact au sol, génère un bouclier d'eau destructible qui bloque les balles."
+      },
+      {
+        "nom": "Cascade",
+        "description": "ÉQUIPEZ une vague d'eau. TIREZ pour envoyer la vague rouler en avant et à travers les murs. RE-USE pour arrêter la vague. Les joueurs touchés sont Ralentis."
+      },
+      {
+        "nom": "Marée Haute",
+        "description": "ÉQUIPEZ un mur d'eau. TIREZ pour envoyer l'eau en avant le long du sol. MAINTENEZ LE FEU pour guider l'eau dans la direction de votre viseur, traversant le monde, générant un mur le long du chemin de l'eau. ALT FIRE tout en courbant pour arrêter l'eau tôt. Les joueurs touchés sont Ralentis."
+      },
+      {
+        "nom": "Châtiment",
+        "description": "ÉQUIPEZ toute la puissance de votre Artefact. TIREZ pour invoquer un bassin de geysers au sol. Les joueurs ennemis dans la zone sont ciblés par des frappes de geysers successives. Les joueurs pris dans une frappe sont Étourdis."
+      }
+    ],
+    "description": "Hailing from India’s coast, Harbor storms the field wielding ancient technology with dominion over water. He unleashes frothing rapids and crushing waves to shield his allies, or pummel those that oppose him."
+  },
+  {
+    "id": "iso",
+    "nom": "Iso",
+    "role": "Dueliste",
+    "origine": "Chine",
+    "specification": ["fixeur à louer", "état de flux", "protection", "duel"],
+    "spell": [
+      {
+        "nom": "Undercut",
+        "description": "ÉQUIPEZ un boulon moléculaire. TIREZ pour le lancer vers l'avant, appliquant brièvement la Vulnérabilité à tous les joueurs qu'il touche. Le boulon peut traverser des objets solides, y compris les murs."
+      },
+      {
+        "nom": "Contrat d'élimination",
+        "description": "ÉQUIPEZ une arène interdimensionnelle. TIREZ pour lancer une colonne d'énergie à travers le champ de bataille, vous et le premier ennemi touché étant entraînés dans l'arène. Vous et votre adversaire vous battez jusqu'à la mort."
+      },
+      {
+        "nom": "Double Tir",
+        "description": "DÉMARREZ une minuterie de concentration. Une fois terminée, entrez dans un état de flux pendant lequel les ennemis vaincus que vous tuez ou endommagez génèrent un orbe d'énergie. Tirer sur cet orbe vous accorde un bouclier qui absorbe une instance de dégâts de n'importe quelle source."
+      },
+      {
+        "nom": "Contingence",
+        "description": "ÉQUIPEZ pour assembler de l'énergie prismatique. TIREZ pour pousser un mur d'énergie indestructible vers l'avant qui bloque les balles."
+      }
+    ],
+    "description": "Chinese fixer for hire Iso falls into a flow state to dismantle the opposition. Reconfiguring ambient energy into bulletproof protection, he advances with focus towards his next duel to the death."
+  },
+  {
+    "id": "kayo",
+    "nom": "KAY/O",
+    "role": "Initiateur",
+    "description": "KAY/O est une machine de guerre construite dans un seul but : neutraliser les radiants. Son pouvoir de suppression des capacités ennemies démantèle la capacité de ses adversaires à riposter, lui assurant à lui et à ses alliés un avantage ultime.",
+    "spell": [
+      {
+        "nom": "FRAG/ment",
+        "description": "ÉQUIPEZ un fragment explosif. TIREZ pour lancer. ALT TIREZ pour lancer un version plus faible qui explose rapidement. Le fragment adhère au sol et explose plusieurs fois, infligeant des dégâts quasi létaux au centre de chaque explosion."
+      },
+      {
+        "nom": "FLASH/drive",
+        "description": "ÉQUIPEZ une grenade éclairante. TIREZ pour lancer par dessus. ALT TIREZ pour lancer une version plus faible qui explose rapidement. La grenade éclairante explose après un court délai, aveuglant quiconque se trouve en ligne de mire."
+      },
+      {
+        "nom": "ZERO/point",
+        "description": "ÉQUIPEZ une lame de suppression. TIREZ pour lancer. La lame adhère à la première surface touchée, se charge et supprime tout le monde dans le rayon de l'explosion. Les ennemis peuvent détruire cette lame."
+      },
+      {
+        "nom": "NULL/cmd",
+        "description": "SURCHARGE instantanément avec de l'énergie radianite polarisée qui pulse depuis KAY/O dans un rayon massif. Les ennemis touchés par les impulsions sont Supprimés pendant une courte durée. Pendant la surcharge, KAY/O bénéficie d'un Stimulant de combat et peut être rétabli s'il est mis hors d'action."
+      }
+    ]
+  },
+  {
+    "id": "killjoy",
+    "nom": "Killjoy",
+    "role": "Sentinelle",
+    "description": "Le génie de l'Allemagne, Killjoy sécurise sans effort des positions clés sur le champ de bataille avec son arsenal d'inventions. Si leurs dégâts ne suffisent pas à éliminer ses ennemis, le debuff que ses robots fournissent les éliminera rapidement.",
+    "sorts": [
+      {
+        "nom": "Nanoswarm",
+        "description": "ÉQUIPEZ une grenade Nanoswarm. TIREZ pour lancer la grenade. À l'atterrissage, le Nanoswarm devient furtif. ALT TIREZ pour lancer. ACTIVEZ le Nanoswarm pour déployer un essaim de nanorobots endommageant."
+      },
+      {
+        "nom": "ALARMBOT",
+        "description": "ÉQUIPEZ un Alarmbot furtif. TIREZ pour déployer un bot qui traque les ennemis dans sa portée. Après avoir atteint sa cible, le bot explose et applique le statut Vulnérable aux ennemis dans la zone. MAINTENEZ ÉQUIPEZ pour rappeler un bot déployé."
+      },
+      {
+        "nom": "TURRET",
+        "description": "ÉQUIPEZ une tourelle. TIREZ pour déployer une tourelle qui tire sur les ennemis dans un cône de 100 degrés. ALT TIREZ pour changer la direction de la tourelle. MAINTENEZ ÉQUIPEZ pour rappeler la tourelle déployée."
+      },
+      {
+        "nom": "Lockdown",
+        "description": "ÉQUIPEZ le dispositif Lockdown. TIREZ pour déployer le dispositif. Après un long délai de préparation, le dispositif Détient tous les ennemis pris dans le rayon. Le dispositif peut être détruit par les ennemis."
+      }
+    ]
+  },
+  {
+    "id": "neon",
+    "nom": "Neon",
+    "role": "Dueliste",
+    "description": "L'agent néon des Philippines avance à une vitesse surprenante, déchargeant des rafales de radiance bioélectrique aussi rapidement que son corps la génère. Elle fonce en avant pour prendre ses ennemis par surprise puis les abat plus rapidement que l'éclair.",
+    "sorts": [
+      {
+        "nom": "High Gear",
+        "description": "Canalisez instantanément la puissance de Neon pour augmenter sa vitesse. Une fois chargée, ALT TIREZ pour déclencher un glissement électrique. La charge du glissement se réinitialise après chaque deux éliminations."
+      },
+      {
+        "nom": "Relay Bolt",
+        "description": "Lancez instantanément un éclair d'énergie rebondissant une fois. En touchant chaque surface, l'éclair électrise le sol en dessous avec une explosion concussive."
+      },
+      {
+        "nom": "Fast Lane",
+        "description": "TIREZ deux lignes d'énergie vers l'avant sur le sol qui s'étendent sur une courte distance ou jusqu'à ce qu'elles touchent une surface. Les lignes se transforment en murs d'électricité statique qui bloquent la vision."
+      },
+      {
+        "nom": "Overdrive",
+        "description": "Libérez toute la puissance et la vitesse de Neon pendant une courte durée. TIREZ pour canaliser la puissance dans un rayon de foudre mortel avec une grande précision de déplacement."
+      }
+    ]
+  },
+  {
+    "id": "omen",
+    "nom": "Omen",
+    "role": "Contrôleur",
+    "description": "Une ombre d'un souvenir, Omen chasse dans les ténèbres. Il rend ses ennemis aveugles, se téléporte à travers le champ de bataille, puis laisse la paranoïa s'installer alors que son adversaire s'efforce de découvrir où il pourrait frapper ensuite.",
+    "sorts": [
+      {
+        "nom": "Paranoia",
+        "description": "ÉQUIPEZ une orbite aveuglante. TIREZ pour la lancer en avant, Nearsighting et Deafening brièvement tous les joueurs qu'elle touche. Ce projectile peut passer à travers les murs."
+      },
+      {
+        "nom": "Dark Cover",
+        "description": "ÉQUIPEZ une orbite d'ombre, entrez dans un monde en phase pour placer et cibler les orbes. APPUYEZ sur la touche de capacité pour jeter l'orbite d'ombre à l'emplacement marqué, créant une sphère d'ombre à longue durée qui bloque la vision. MAINTENEZ enfoncée la touche de tir tout en ciblant pour déplacer le marqueur plus loin. MAINTENEZ enfoncée la touche de tir alternatif tout en ciblant pour déplacer le marqueur plus près. APPUYEZ sur RECHARGER pour basculer la vue de ciblage normale."
+      },
+      {
+        "nom": "Shrouded Step",
+        "description": "ÉQUIPEZ une capacité de pas voilé et voyez son indicateur de portée. TIREZ pour commencer une brève canalisation, puis téléportez-vous à l'emplacement marqué."
+      },
+      {
+        "nom": "From the Shadows",
+        "description": "ÉQUIPEZ une carte tactique. TIREZ pour commencer à vous téléporter à l'emplacement sélectionné. Pendant la téléportation, Omen apparaîtra comme une Ombre qui peut être détruite par un ennemi pour annuler sa téléportation, ou APPUYEZ sur ÉQUIPER pour qu'Omen annule sa téléportation."
+      }
+    ]
+  },
+  {
+    "id": "raze",
+    "nom": "Raze",
+    "role": "Dueliste",
+    "description": "Raze explose hors du Brésil avec sa grande personnalité et ses grosses armes. Avec son style de jeu axé sur la force brute, elle excelle à déloger les ennemis retranchés et à nettoyer les espaces restreints avec une bonne dose de « boom ».",
+    "sorts": [
+      {
+        "nom": "Blast Pack",
+        "description": "JETEZ INSTANTANÉMENT un Blast Pack qui collera aux surfaces. RÉUTILISEZ la capacité après le déploiement pour le faire exploser, endommageant et déplaçant tout ce qui est touché."
+      },
+      {
+        "nom": "Paint Shells",
+        "description": "ÉQUIPEZ une grenade en grappe. TIREZ pour lancer la grenade, qui inflige des dégâts et crée des sous-munitions, chacune infligeant des dégâts à toute personne dans leur portée. ALT TIRE pour lancer. La charge des Paint Shells se réinitialise à chaque deux éliminations."
+      },
+      {
+        "nom": "Boom Bot",
+        "description": "ÉQUIPEZ un Boom Bot. TIREZ pour déployer le bot, le faisant voyager en ligne droite au sol, rebondissant contre les murs. Le Boom Bot se verrouillera sur tous les ennemis dans son cône frontal et les poursuivra, explosant pour des dégâts importants s'il les atteint."
+      },
+      {
+        "nom": "Showstopper",
+        "description": "ÉQUIPEZ un lance-roquettes. TIREZ pour tirer une roquette qui inflige d'énormes dégâts de zone au contact de quoi que ce soit."
+      }
+    ]
+  },
+  {
+    "id": "reyna",
+    "nom": "Reyna",
+    "role": "Dueliste",
+    "description": "Forgée au cœur du Mexique, Reyna domine le combat en solo, explosant à chaque élimination qu'elle réalise. Sa capacité est uniquement limitée par son habileté brute, la rendant fortement dépendante de sa performance.",
+    "sorts": [
+      {
+        "nom": "Devour",
+        "description": "Récolte d'âme : Les ennemis qui meurent sous les coups de Reyna, ou qui meurent dans les 3 secondes suivant des dégâts infligés par Reyna, laissent derrière eux des Orbes d'âme qui durent 3 secondes. Dévoration : CONSOMMEZ INSTANTANÉMENT un Orbe d'âme à proximité, guérissant rapidement pendant une courte durée. La santé obtenue grâce à cette compétence dépassant 100 se dégradera avec le temps. Si EMPRESS est actif, cette compétence se lancera automatiquement et ne consommera pas l'Orbe d'âme."
+      },
+      {
+        "nom": "Dismiss",
+        "description": "CONSOMMEZ INSTANTANÉMENT un Orbe d'âme à proximité, devenant Intangible pendant une courte durée. Si EMPRESS est actif, devenez également Invisible."
+      },
+      {
+        "nom": "Leer",
+        "description": "ÉQUIPEZ un œil éthéré et destructible. ACTIVEZ pour lancer l'œil à une courte distance devant vous. L'œil aveuglera tous les ennemis qui le regardent."
+      },
+      {
+        "nom": "Empress",
+        "description": "ENTREZ INSTANTANÉMENT dans une frénésie, gagnant un Stimulant de combat qui augmente considérablement la vitesse de tir, d'équipement et de rechargement. Obtenez des charges infinies des compétences de Récolte d'âme. Lorsqu'un ennemi meurt sous les coups de Reyna, ou meurt dans les 3 secondes suivant des dégâts infligés par Reyna, la durée est renouvelée."
+      }
+    ]
+  },
+  {
+    "id": "skye",
+    "nom": "Skye",
+    "role": "Initiateur",
+    "description": "Originaire d'Australie, Skye et son groupe de bêtes ouvrent la voie à travers un territoire hostile. Avec ses créations entravant l'ennemi et son pouvoir de guérison, l'équipe est la plus forte et la plus sûre aux côtés de Skye.",
+    "sorts": [
+      {
+        "nom": "Trailblazer",
+        "description": "ÉQUIPEZ un breloque de tigre de Tasmanie. APPUYEZ pour envoyer et prendre le contrôle du prédateur. En étant contrôlé, APPUYEZ pour sauter en avant, explosant dans une explosion assourdissante à l'impact et endommageant les ennemis touchés directement."
+      },
+      {
+        "nom": "Guiding Light",
+        "description": "ÉQUIPEZ un breloque de faucon. APPUYEZ pour l'envoyer en avant. MAINTENEZ le bouton enfoncé pour guider le faucon dans la direction de votre viseur. RÉUTILISEZ pendant le vol du faucon pour le transformer en flash. Le flash atteint sa puissance maximale après une courte durée pendant le vol du faucon."
+      },
+      {
+        "nom": "Regrowth",
+        "description": "ÉQUIPEZ un breloque de guérison. MAINTENEZ le bouton enfoncé pour canaliser, guérissant les alliés dans la portée et le champ de vision. Peut être réutilisé jusqu'à ce que sa réserve de guérison soit épuisée. Skye ne peut pas se soigner elle-même."
+      },
+      {
+        "nom": "Seekers",
+        "description": "ÉQUIPEZ un breloque de Traqueur. APPUYEZ pour envoyer trois Traqueurs pour traquer les trois ennemis les plus proches. Si un Traqueur atteint sa cible, il l'aveugle. Les ennemis peuvent détruire les Traqueurs."
+      }
+    ]
+  },
+  {
+    "id": "viper",
+    "nom": "Viper",
+    "role": "Contrôleur",
+    "description": "La chimiste américaine, Viper déploie une série de dispositifs chimiques toxiques pour contrôler le champ de bataille et étouffer la vision de l'ennemi. Si les toxines ne tuent pas sa proie, ses jeux mentaux le feront sûrement.",
+    "sorts": [
+      {
+        "nom": "Poison Cloud",
+        "description": "ÉQUIPEZ un émetteur de gaz. APPUYEZ pour lancer l'émetteur qui reste en place pendant toute la manche. ALT FIRE pour lancer en cloche. RÉUTILISEZ l'aptitude pour créer un nuage de gaz toxique au prix de carburant. Cette capacité peut être RÉUTILISÉE plus d'une fois et peut être ramassée pour être REDÉPLOYÉE."
+      },
+      {
+        "nom": "Toxic Screen",
+        "description": "ÉQUIPEZ un lanceur d'émetteur de gaz qui pénètre dans le terrain. APPUYEZ pour déployer une longue ligne d'émetteurs de gaz. RÉUTILISEZ l'aptitude pour créer un grand mur de gaz toxique au prix de carburant. Cette capacité peut être RÉUTILISÉE plus d'une fois."
+      },
+      {
+        "nom": "Snake Bite",
+        "description": "ÉQUIPEZ un lanceur chimique. APPUYEZ pour lancer une cartouche qui se brise en touchant le sol, créant une zone chimique persistante qui inflige des dégâts et applique Vulnérable."
+      },
+      {
+        "nom": "Viper's Pit",
+        "description": "ÉQUIPEZ un pulvérisateur chimique. APPUYEZ pour pulvériser un nuage chimique dans toutes les directions autour de Viper, créant un grand nuage qui aveugle les joueurs et fait décroître la santé des ennemis à l'intérieur. MAINTENEZ le bouton de compétence enfoncé pour disperser le nuage prématurément."
+      },
+      {
+        "nom": "Toxic",
+        "description": "Vous générez et régénérez progressivement la toxine qui alimente vos capacités. Les ennemis qui traversent le Nuage de poison, l'Écran toxique ou le Trou de Viper sont instantanément affectés par au moins 30 de Décadence. Leur niveau de Décadence augmente plus ils restent en contact avec."
+      }
+    ]
+  },
+  {
+    "id": "yoru",
+    "nom": "Yoru",
+    "role": "Dueliste",
+    "description": "Originaire du Japon, Yoru perce des trous droit à travers la réalité pour infiltrer les lignes ennemies sans être vu. Utilisant la tromperie et l'agression de manière égale, il surprend chaque cible avant qu'elle ne sache où regarder.",
+    "sorts": [
+      {
+        "nom": "FAKEOUT",
+        "description": "ÉQUIPEZ un écho qui se transforme en une image miroir de Yoru lorsqu'il est activé. APPUYEZ pour activer instantanément l'image miroir et l'envoyer en avant. ALT FIRE pour placer un écho inactif. UTILISEZ pour transformer un écho inactif en une image miroir et l'envoyer en avant. Les images miroirs explosent dans un flash aveuglant lorsqu'elles sont détruites par les ennemis."
+      },
+      {
+        "nom": "BLINDSIDE",
+        "description": "ÉQUIPEZ pour arracher un fragment dimensionnel instable de la réalité. APPUYEZ pour lancer le fragment, activant un flash qui se charge une fois qu'il entre en collision avec une surface dure."
+      },
+      {
+        "nom": "GATECRASH",
+        "description": "ÉQUIPEZ un lien dimensionnel. APPUYEZ pour envoyer le lien en avant. ALT FIRE pour placer un lien stationnaire. ACTIVER pour vous téléporter à l'emplacement du lien. UTILISEZ pour déclencher une fausse téléportation."
+      },
+      {
+        "nom": "DIMENSIONAL DRIFT",
+        "description": "ÉQUIPEZ un masque qui peut voir entre les dimensions. APPUYEZ pour dériver dans la dimension de Yoru, incapable d'être affecté ou vu par les ennemis de l'extérieur. RÉACTIVER pour sortir de la dimension de Yoru plus tôt."
+      }
+    ]
+  }
+]
