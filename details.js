@@ -53,7 +53,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const jsPDF = window.jspdf.jsPDF; // Correction ici
         const doc = new jsPDF();
     
-        doc.text("Hello world!", 10, 10);
-        doc.save("a4.pdf");
+        chrome.storage.local.get('selectedPersonnages', function(data) {
+            const personnages = data.selectedPersonnages || [];
+            doc.text('Agents Sélectionnés:', 10, 10);
+    
+            let yPos = 20;
+            personnages.forEach(personnage => {
+                doc.text(`${personnage.nom} (${personnage.role})`, 10, yPos);
+                yPos += 10;
+            });
+    
+            if (personnages.length === 0) {
+                doc.text('Aucun agent sélectionné.', 10, yPos);
+            }
+    
+            doc.save('agents-selectionnes.pdf');
+        });
     });
 });
