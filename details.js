@@ -35,19 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     
-    if (window.jspdf && window.jspdf.jsPDF) {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        document.getElementById('save-pdf').addEventListener('click', function() {
-            const jsPDF = window.jspdf.jsPDF; // Correction ici
-            const doc = new jsPDF();
-        
-            doc.text("Hello world!", 10, 10);
-            doc.save("a4.pdf");
-        });
-    } else {
-        console.error('jsPDF n\'est pas chargé correctement.');
-    }
+
 
    // Fonction hypothétique pour charger une image et la convertir en Data URL
 function loadImageAsDataURL(url, callback) {
