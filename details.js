@@ -2,46 +2,71 @@ document.addEventListener('DOMContentLoaded', function() {
     // Récupération et affichage des personnages sélectionnés
     const container = document.getElementById('agents-container');
 
-    // Supposons que vous ayez une fonction pour obtenir les personnages sélectionnés
-    // Cette fonction devrait être asynchrone si elle récupère les données à partir d'une API ou d'une source externe
     async function loadAndDisplayPersonnages() {
-        // Utilisez chrome.storage.local.get pour récupérer les personnages
-        chrome.storage.local.get('selectedPersonnages', function(data) {
-            const personnages = data.selectedPersonnages || [];
-            const container = document.getElementById('agents-container');
+        return new Promise((resolve, reject) => {
+            chrome.storage.local.get('selectedPersonnages', function(data) {
+                const personnages = data.selectedPersonnages || [];
+                container.innerHTML = ''; // Effacer le contenu précédent
+                
+                if (personnages.length > 0) {
+                    personnages.forEach(async personnage => {
+                        const div = document.createElement('div');
+                        const nom = document.createElement('h3');
+                        const role = document.createElement('p');
     
-            if (personnages.length > 0) {
-                personnages.forEach(personnage => {
-                    const div = document.createElement('div');
-                    const img = document.createElement('img');
-                    const nom = document.createElement('h3');
-                    const role = document.createElement('p');
+                        if (personnage.image) {
+                            // Convertir l'image en base64
+                            const base64Image = await getImageAsBase64(personnage.image);
+                            if (base64Image) {
+                                // Intégrer l'image en base64 dans la page HTML
+                                const img = document.createElement('img');
+                                img.src = base64Image;
+                                img.alt = `Image de ${personnage.nom}`;
+                                img.style.width = '100px';
+                                div.appendChild(img);
+                            }
+                        }
     
-                    if (personnage.image) {
-                        img.src = personnage.image;
-                        img.alt = `Image de ${personnage.nom}`;
-                        img.style.width = '100px';
-                        div.appendChild(img);
-                    }
+                        if (personnage.nom) {
+                            nom.textContent = personnage.nom;
+                            div.appendChild(nom);
+                        }
     
-                    if (personnage.nom) {
-                        nom.textContent = personnage.nom;
-                        div.appendChild(nom);
-                    }
+                        if (personnage.role) {
+                            role.textContent = `Rôle: ${personnage.role}`;
+                            div.appendChild(role);
+                        }
     
-                    if (personnage.role) {
-                        role.textContent = `Rôle: ${personnage.role}`;
-                        div.appendChild(role);
-                    }
-    
-                    container.appendChild(div);
-                });
-            } else {
-                container.textContent = 'Aucun agent sélectionné.';
-            }
+                        container.appendChild(div);
+                    });
+                    resolve(); // Résoudre la promesse une fois que tout est affiché
+                } else {
+                    container.textContent = 'Aucun agent sélectionné.';
+                    resolve(); // Résoudre même si aucun agent n'est trouvé
+                }
+            });
         });
     }
-    
+
+    // Fonction pour convertir une image en base64
+    function getImageAsBase64(url) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    resolve(reader.result);
+                }
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.onerror = function() {
+                reject(new Error('Erreur lors du chargement de l\'image en base64'));
+            };
+            xhr.open('GET', url);
+            xhr.responseType = 'blob';
+            xhr.send();
+        });
+    }
 
     // Appel de la fonction pour charger et afficher les personnages
     loadAndDisplayPersonnages().then(() => {
