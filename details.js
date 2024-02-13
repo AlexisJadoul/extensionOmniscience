@@ -1,91 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('agents-container');
+    document.getElementById('save-pdf').addEventListener('click', function() {
+        // Utiliser html2canvas pour capturer le contenu de la page
+        html2canvas(document.body).then(canvas => {
+            // S'assurer que jsPDF est chargé correctement
+            if (window.jspdf && window.jspdf.jsPDF) {
+                // Utiliser la déstructuration pour accéder à jsPDF à partir de window.jspdf
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                
+                // Calculer la largeur et la hauteur de l'image pour qu'elle s'adapte à la largeur de la page PDF
+                const imgWidth = 210; // Largeur de la page A4 en mm
+                const imgHeight = canvas.height * imgWidth / canvas.width;
 
-    chrome.storage.local.get('selectedPersonnages', function(data) {
-        const personnages = data.selectedPersonnages || [];
-        if (personnages.length > 0) {
-            personnages.forEach(personnage => {
-                const div = document.createElement('div');
-                const img = document.createElement('img');
-                const nom = document.createElement('h3');
-                const role = document.createElement('p');
+                // Convertir le canvas en une DataURL de l'image
+                const imgData = canvas.toDataURL('image/png');
 
-                if (personnage.image) {
-                    img.src = personnage.image;
-                    img.alt = `Image de ${personnage.nom}`;
-                    img.style.width = '100px'; // Exemple de style
-                    div.appendChild(img);
-                }
+                // Ajouter l'image au PDF
+                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
 
-                if (personnage.nom) {
-                    nom.textContent = personnage.nom;
-                    div.appendChild(nom);
-                }
-
-                if (personnage.role) {
-                    role.textContent = `Rôle: ${personnage.role}`;
-                    div.appendChild(role);
-                }
-
-                container.appendChild(div);
-            });
-        } else {
-            container.textContent = 'Aucun agent sélectionné.';
-        }
-    });
-
-    
-
-
-   // Fonction hypothétique pour charger une image et la convertir en Data URL
-function loadImageAsDataURL(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-        var reader = new FileReader();
-        reader.onloadend = function() {
-            callback(reader.result);
-        }
-        reader.readAsDataURL(xhr.response);
-    };
-    xhr.open('GET', url);
-    xhr.responseType = 'blob';
-    xhr.send();
-}
-
-document.getElementById('save-pdf').addEventListener('click', function() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    chrome.storage.local.get('selectedPersonnages', function(data) {
-        const personnages = data.selectedPersonnages || [];
-        let yPos = 20;
-
-        // Fonction asynchrone pour ajouter chaque personnage au PDF
-        async function addPersonnagesToPDF(personnages) {
-            for (const personnage of personnages) {
-                // Ajouter le texte
-                doc.text(`${personnage.nom} (${personnage.role})`, 10, yPos);
-                yPos += 10;
-
-                // Charger et ajouter l'image
-                if (personnage.image) {
-                    await new Promise((resolve, reject) => {
-                        loadImageAsDataURL(personnage.image, function(dataUrl) {
-                            // Ajouter l'image au PDF
-                            doc.addImage(dataUrl, 'JPEG', 10, yPos, 30, 30);
-                            yPos += 35; // Ajuster l'espace pour la prochaine entrée
-                            resolve();
-                        });
-                    });
-                }
+                // Sauvegarder le PDF
+                pdf.save('detail-page.pdf');
+            } else {
+                console.error('jsPDF n\'est pas chargé correctement.');
             }
-
-            // Tous les personnages ont été ajoutés, sauvegarder le PDF
-            doc.save('agents-selectionnes.pdf');
-        }
-
-        addPersonnagesToPDF(personnages).catch(console.error);
+        }).catch(error => {
+            console.error("Erreur lors de la capture avec html2canvas :", error);
+        });
     });
-});
-
 });
