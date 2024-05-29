@@ -332,7 +332,8 @@
       }
     ],
     "description": "La chasseuse de primes turque, Fade, libère le pouvoir du cauchemar brut pour saisir les secrets ennemis. Accordée avec la terreur elle-même, elle traque les cibles et révèle leurs plus grandes peurs - avant de les écraser dans l'obscurité.",
-    "flasheur": false
+    "flasheur": false,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png"
   },
   {
     "id": "gekko",
@@ -364,7 +365,8 @@
       }
     ],
     "description": "Gekko, l'Angeleno, dirige une équipe soudée de créatures calamiteuses. Ses amis bondissent en avant, dispersant les ennemis, tandis que Gekko les poursuit pour se regrouper et recommencer.",
-    "flasheur": true
+    "flasheur": true,
+    "image": "https://tracker.gg/valorant/db/agents/gekko"
   },
   {
     "id": "harbor",
@@ -396,7 +398,8 @@
       }
     ],
     "description": "Hailing from India’s coast, Harbor storms the field wielding ancient technology with dominion over water. He unleashes frothing rapids and crushing waves to shield his allies, or pummel those that oppose him.",
-    "flasheur": false
+    "flasheur": false,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/95b78ed7-4637-86d9-7e41-71ba8c293152/displayicon.png"
   },
   {
     "id": "iso",
@@ -423,7 +426,8 @@
       }
     ],
     "description": "Chinese fixer for hire Iso falls into a flow state to dismantle the opposition. Reconfiguring ambient energy into bulletproof protection, he advances with focus towards his next duel to the death.",
-    "flasheur": false
+    "flasheur": false,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/0e38b510-41a8-5780-5e8f-568b2a4f2d6c/displayicon.png"
   },
   {
     "id": "kayo",
@@ -448,7 +452,8 @@
         "description": "SURCHARGE instantanément avec de l'énergie radianite polarisée qui pulse depuis KAY/O dans un rayon massif. Les ennemis touchés par les impulsions sont Supprimés pendant une courte durée. Pendant la surcharge, KAY/O bénéficie d'un Stimulant de combat et peut être rétabli s'il est mis hors d'action."
       }
     ],
-    "flasheur": true
+    "flasheur": true,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/601dbbe7-43ce-be57-2a40-4abd24953621/displayicon.png"
   },
   {
     "id": "killjoy",
@@ -473,7 +478,8 @@
         "description": "ÉQUIPEZ le dispositif Lockdown. TIREZ pour déployer le dispositif. Après un long délai de préparation, le dispositif Détient tous les ennemis pris dans le rayon. Le dispositif peut être détruit par les ennemis."
       }
     ],
-    "flasheur": false
+    "flasheur": false,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/displayicon.png"
   },
   {
     "id": "neon",
@@ -498,7 +504,8 @@
         "description": "Libérez toute la puissance et la vitesse de Neon pendant une courte durée. TIREZ pour canaliser la puissance dans un rayon de foudre mortel avec une grande précision de déplacement."
       }
     ],
-    "flasheur": false
+    "flasheur": false,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/bb2a4828-46eb-8cd1-e765-15848195d751/displayicon.png"
   },
   {
     "id": "omen",
@@ -523,7 +530,8 @@
         "description": "ÉQUIPEZ une carte tactique. TIREZ pour commencer à vous téléporter à l'emplacement sélectionné. Pendant la téléportation, Omen apparaîtra comme une Ombre qui peut être détruite par un ennemi pour annuler sa téléportation, ou APPUYEZ sur ÉQUIPER pour qu'Omen annule sa téléportation."
       }
     ],
-    "flasheur": true
+    "flasheur": true,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/8e253930-4c05-31dd-1b6c-968525494517/displayicon.png"
   },
   {
     "id": "raze",
@@ -548,7 +556,8 @@
         "description": "ÉQUIPEZ un lance-roquettes. TIREZ pour tirer une roquette qui inflige d'énormes dégâts de zone au contact de quoi que ce soit."
       }
     ],
-    "flasheur": false
+    "flasheur": false,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png"
   },
   {
     "id": "reyna",
@@ -573,7 +582,8 @@
         "description": "ENTREZ INSTANTANÉMENT dans une frénésie, gagnant un Stimulant de combat qui augmente considérablement la vitesse de tir, d'équipement et de rechargement. Obtenez des charges infinies des compétences de Récolte d'âme. Lorsqu'un ennemi meurt sous les coups de Reyna, ou meurt dans les 3 secondes suivant des dégâts infligés par Reyna, la durée est renouvelée."
       }
     ],
-    "flasheur": true
+    "flasheur": true,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/displayicon.png"
   },
   {
     "id": "skye",
@@ -598,7 +608,8 @@
         "description": "ÉQUIPEZ un breloque de Traqueur. APPUYEZ pour envoyer trois Traqueurs pour traquer les trois ennemis les plus proches. Si un Traqueur atteint sa cible, il l'aveugle. Les ennemis peuvent détruire les Traqueurs."
       }
     ],
-    "flasheur": true
+    "flasheur": true,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png"
   },
   {
     "id": "viper",
@@ -627,7 +638,8 @@
         "description": "Vous générez et régénérez progressivement la toxine qui alimente vos capacités. Les ennemis qui traversent le Nuage de poison, l'Écran toxique ou le Trou de Viper sont instantanément affectés par au moins 30 de Décadence. Leur niveau de Décadence augmente plus ils restent en contact avec."
       }
     ],
-    "flasheur": false
+    "flasheur": false,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/707eab51-4836-f488-046a-cda6bf494859/displayicon.png"
   },
   {
     "id": "yoru",
@@ -652,6 +664,7 @@
         "description": "ÉQUIPEZ un masque qui peut voir entre les dimensions. APPUYEZ pour dériver dans la dimension de Yoru, incapable d'être affecté ou vu par les ennemis de l'extérieur. RÉACTIVER pour sortir de la dimension de Yoru plus tôt."
       }
     ],
-    "flasheur": true
+    "flasheur": true,
+    "image": "https://titles.trackercdn.com/valorant-api/agents/7f94d92c-4234-0a36-9646-3a87eb8b5c89/displayicon.png"
   }
 ]

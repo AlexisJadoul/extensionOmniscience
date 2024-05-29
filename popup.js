@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mapImage = document.getElementById("map-image");
   const categorySelector = document.getElementById("category-selector");
   const conseilsContainer = document.getElementById("conseils-container");
+  const resetButton = document.getElementById("reset-selection");
   let personnages = [];
   let mapsData = [];
   let conseilsData = {};
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     xhr.onload = function () {
       if (xhr.status === 200) {
         personnages = JSON.parse(xhr.responseText);
-        afficherPersonnages(personnages);
+        afficherPersonnages();
       } else {
         console.error(
           "Erreur lors du chargement du fichier JSON:",
@@ -113,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Fonction pour afficher les personnages dans la popup
-  function afficherPersonnages(personnages) {
+  function afficherPersonnages() {
     container.innerHTML = "";
     const selectedMap = mapSelector.value;
     const mapData = mapsData.find((map) => map.name === selectedMap);
@@ -127,9 +128,14 @@ document.addEventListener("DOMContentLoaded", function () {
       mapImage.style.display = "none";
     }
 
-    // Trier les personnages pour mettre les flasheurs en premier
+    // Trier les personnages pour mettre les meilleurs agents de la carte sélectionnée en premier,
+    // puis les flasheurs, et enfin les autres personnages
     personnages.sort((a, b) => {
-      if (a.flasheur && !b.flasheur) {
+      if (bestAgents.includes(a.nom) && !bestAgents.includes(b.nom)) {
+        return -1;
+      } else if (!bestAgents.includes(a.nom) && bestAgents.includes(b.nom)) {
+        return 1;
+      } else if (a.flasheur && !b.flasheur) {
         return -1;
       } else if (!a.flasheur && b.flasheur) {
         return 1;
@@ -212,10 +218,20 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
 
+  // Ajoute un écouteur d'événements sur le bouton "Réinitialiser"
+  resetButton.addEventListener("click", function () {
+    chrome.storage.local.remove("selectedPersonnages", function () {
+      document
+        .querySelectorAll("#personnages-container input:checked")
+        .forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+      console.log("Sélections réinitialisées.");
+    });
+  });
+
   // Ajoute un écouteur d'événements sur le sélecteur de carte
-  mapSelector.addEventListener("change", () =>
-    afficherPersonnages(personnages)
-  );
+  mapSelector.addEventListener("change", () => afficherPersonnages());
 
   // Ajoute un écouteur d'événements sur le sélecteur de catégorie de conseils
   categorySelector.addEventListener("change", () => {
