@@ -1,0 +1,89 @@
+{
+  "Préparation": [
+    {
+      "idée": "Échauffement",
+      "note": 5,
+      "explication": "Fais quelques parties de tir pour t’échauffer. Utilise le mode entraînement pour travailler ton aim."
+    },
+    {
+      "idée": "Hydratation et alimentation",
+      "note": 4,
+      "explication": "Assure-toi d'être bien hydraté et d'avoir mangé suffisamment. Évite les aliments trop lourds avant de jouer."
+    }
+  ],
+  "Concentration pendant le jeu": [
+    {
+      "idée": "Respiration",
+      "note": 4,
+      "explication": "Prends de grandes respirations pour rester calme, surtout après une action intense. Cela aide à réduire le stress et à maintenir la concentration."
+    },
+    {
+      "idée": "Courtes pauses",
+      "note": 3,
+      "explication": "Entre chaque partie, prends quelques minutes pour te lever, marcher un peu et te détendre. Cela aide à réduire la fatigue mentale."
+    },
+    {
+      "idée": "Posture",
+      "note": 3,
+      "explication": "Assure-toi d'être confortablement installé avec une bonne posture. Une chaise ergonomique et un bon setup peuvent faire une grande différence."
+    }
+  ],
+  "Stratégie et communication": [
+    {
+      "idée": "Vérification des angles",
+      "note": 5,
+      "explication": "Rappelle-toi de toujours vérifier les angles avant d'avancer. Utilise le décalage pour minimiser les risques."
+    },
+    {
+      "idée": "Communication",
+      "note": 4,
+      "explication": "Sois clair et concis dans tes communications avec ton équipe. Donne des informations utiles sans trop parler pour éviter de distraire."
+    },
+    {
+      "idée": "Utilisation des compétences",
+      "note": 4,
+      "explication": "Planifie l'utilisation de tes compétences en fonction de la situation. Ne les gaspille pas et coordonne-les avec ton équipe."
+    }
+  ],
+  "Gestion de la frustration": [
+    {
+      "idée": "Acceptation des erreurs",
+      "note": 4,
+      "explication": "Comprends que les erreurs font partie du jeu. Analyse ce qui n'a pas fonctionné et apprends de tes erreurs plutôt que de t'énerver."
+    },
+    {
+      "idée": "Focus sur l'amélioration",
+      "note": 4,
+      "explication": "Concentre-toi sur ce que tu peux améliorer plutôt que sur les résultats immédiats. La progression est plus importante que de gagner chaque partie."
+    },
+    {
+      "idée": "Pause mentale",
+      "note": 3,
+      "explication": "Si tu te sens frustré ou énervé, prends une courte pause. Fais autre chose pendant quelques minutes pour te changer les idées."
+    }
+  ],
+  "Mentalité (Mindset)": [
+    {
+      "idée": "Objectifs réalistes",
+      "note": 4,
+      "explication": "Fixe-toi des objectifs réalistes pour chaque session de jeu. Cela peut être d'améliorer ton aim, de travailler sur ta communication, etc."
+    },
+    {
+      "idée": "Rester positif",
+      "note": 4,
+      "explication": "Essaie de garder une attitude positive, même en cas de défaite. Encourage tes coéquipiers et félicite-les pour leurs bonnes actions."
+    }
+  ],
+  "Analyse et amélioration": [
+    {
+      "idée": "Replays",
+      "note": 3,
+      "explication": "Regarde les replays de tes parties pour identifier tes points faibles et comprendre les erreurs stratégiques."
+    },
+    {
+      "idée": "Feedback",
+      "note": 3,
+      "explication": "Demande des feedbacks constructifs à tes amis ou à des joueurs plus expérimentés."
+    }
+  ]
+}

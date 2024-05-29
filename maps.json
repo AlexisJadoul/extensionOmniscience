@@ -1,0 +1,83 @@
+{
+  "maps": [
+    {
+      "name": "Ascent",
+      "attacker_win_rate": 47.91,
+      "defender_win_rate": 52.09,
+      "best_plant_site": "B",
+      "best_agents": ["Sova", "Jett", "Omen", "Killjoy", "Phoenix"]
+    },
+    {
+      "name": "Bind",
+      "attacker_win_rate": 48.6,
+      "defender_win_rate": 51.4,
+      "best_plant_site": "B",
+      "best_agents": ["Raze", "Brimstone", "Sage", "Viper", "Cypher"]
+    },
+    {
+      "name": "Breeze",
+      "attacker_win_rate": 51.36,
+      "defender_win_rate": 48.64,
+      "best_plant_site": "B",
+      "best_agents": ["Viper", "Jett", "Sova", "Killjoy", "Astra"]
+    },
+    {
+      "name": "Icebox",
+      "attacker_win_rate": 50.57,
+      "defender_win_rate": 49.43,
+      "best_plant_site": "A",
+      "best_agents": ["Sage", "Jett", "Viper", "Sova", "Killjoy"]
+    },
+    {
+      "name": "Lotus",
+      "attacker_win_rate": 52.37,
+      "defender_win_rate": 47.63,
+      "best_plant_site": "A",
+      "best_agents": ["Astra", "Killjoy", "Omen", "Viper", "Sova"]
+    },
+    {
+      "name": "Split",
+      "attacker_win_rate": 49.55,
+      "defender_win_rate": 50.45,
+      "best_plant_site": "A",
+      "best_agents": ["Cypher", "Raze", "Sage", "Breach", "Brimstone"]
+    },
+    {
+      "name": "Sunset",
+      "attacker_win_rate": 49.89,
+      "defender_win_rate": 50.11,
+      "best_plant_site": "B",
+      "best_agents": ["Jett", "Reyna", "Omen", "Sage", "Killjoy"]
+    },
+    {
+      "name": "Fracture",
+      "attacker_win_rate": 50,
+      "defender_win_rate": 50,
+      "best_plant_site": "A",
+      "best_agents": [
+        "Breach",
+        "Cypher",
+        "Sova",
+        "Skye",
+        "KAY/O",
+        "Raze",
+        "Astra",
+        "Yoru"
+      ]
+    },
+    {
+      "name": "Haven",
+      "attacker_win_rate": "NA",
+      "defender_win_rate": "NA",
+      "best_plant_site": "C",
+      "best_agents": ["Sova", "Jett", "Killjoy", "Omen", "Breach"]
+    },
+    {
+      "name": "Pearl",
+      "attacker_win_rate": "NA",
+      "defender_win_rate": "NA",
+      "best_plant_site": "A",
+      "best_agents": ["Astra", "Viper", "Killjoy", "Sova", "Jett"]
+    }
+  ]
+}

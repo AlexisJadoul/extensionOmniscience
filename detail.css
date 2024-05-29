@@ -1,36 +1,41 @@
+/* detail.css */
+
 /* Style général */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #4e2349;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #4e2349;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
-#agents-container {
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
+#agents-container,
+#conseils-container {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+#conseils-container {
+  margin-top: 40px;
 }
 
 /* Style du bouton */
 #save-pdf {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 #save-pdf:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
-
-/* Ajoutez d'autres styles selon vos besoins */

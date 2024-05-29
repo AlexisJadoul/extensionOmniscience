@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Personnages Valorant</title>
-    <link rel="stylesheet" href="popup.css">
-</head>
-<body>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div>
+      <label for="map-selector">Choisir une carte:</label>
+      <select id="map-selector">
+        <option value="Ascent">Ascent</option>
+        <option value="Bind">Bind</option>
+        <option value="Breeze">Breeze</option>
+        <option value="Icebox">Icebox</option>
+        <option value="Lotus">Lotus</option>
+        <option value="Split">Split</option>
+        <option value="Sunset">Sunset</option>
+        <option value="Fracture">Fracture</option>
+        <option value="Haven">Haven</option>
+        <option value="Pearl">Pearl</option>
+      </select>
+    </div>
+    <div id="map-image-container">
+      <img
+        id="map-image"
+        src=""
+        alt="Image de la carte"
+        style="width: 100%; display: none"
+      />
+    </div>
     <div id="personnages-container"></div>
+    <div>
+      <label for="category-selector">Choisir une catégorie de conseils:</label>
+      <select id="category-selector">
+        <option value="">--Sélectionnez une catégorie--</option>
+        <!-- Les options seront ajoutées dynamiquement -->
+      </select>
+    </div>
+    <div id="conseils-container"></div>
     <button id="save-selection">Sauvegarder la sélection</button>
-    <div id="confirmation-message" style="display: none;">Sélection sauvegardée !</div>
+    <div id="confirmation-message" style="display: none">
+      Sélection sauvegardée !
+    </div>
+
     <script src="popup.js"></script>
-</body>
+  </body>
 </html>
