@@ -2,12 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("personnages-container");
   const mapSelector = document.getElementById("map-selector");
   const mapImage = document.getElementById("map-image");
-  const categorySelector = document.getElementById("category-selector");
-  const conseilsContainer = document.getElementById("conseils-container");
   const resetButton = document.getElementById("reset-selection");
   let personnages = [];
   let mapsData = [];
-  let conseilsData = {};
 
   // Charger les personnages depuis un fichier JSON
   function chargerPersonnages() {
@@ -16,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     xhr.onload = function () {
       if (xhr.status === 200) {
         personnages = JSON.parse(xhr.responseText);
-        afficherPersonnages();
+        afficherPersonnages(personnages);
       } else {
         console.error(
           "Erreur lors du chargement du fichier JSON:",
@@ -54,67 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
     xhr.send();
   }
 
-  // Charger les conseils depuis un fichier JSON
-  function chargerConseils() {
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", chrome.runtime.getURL("conseils.json"), true);
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        conseilsData = JSON.parse(xhr.responseText);
-        remplirCategories();
-      } else {
-        console.error(
-          "Erreur lors du chargement du fichier JSON:",
-          xhr.statusText
-        );
-      }
-    };
-    xhr.onerror = function () {
-      console.error(
-        "Erreur réseau lors de la tentative de chargement du fichier JSON."
-      );
-    };
-    xhr.send();
-  }
-
-  // Fonction pour remplir le sélecteur de catégories de conseils
-  function remplirCategories() {
-    categorySelector.innerHTML =
-      '<option value="">--Sélectionnez une catégorie--</option>';
-    for (const category in conseilsData) {
-      const option = document.createElement("option");
-      option.value = category;
-      option.textContent = category;
-      categorySelector.appendChild(option);
-    }
-  }
-
-  // Fonction pour afficher les conseils pour une catégorie sélectionnée
-  function afficherConseils(category) {
-    conseilsContainer.innerHTML = "";
-    const conseils = conseilsData[category];
-    conseils.forEach((conseil) => {
-      const div = document.createElement("div");
-      div.className = "conseil";
-
-      const titre = document.createElement("h3");
-      titre.textContent = conseil.idée;
-
-      const note = document.createElement("p");
-      note.textContent = `Note: ${conseil.note}`;
-
-      const explication = document.createElement("p");
-      explication.textContent = conseil.explication;
-
-      div.appendChild(titre);
-      div.appendChild(note);
-      div.appendChild(explication);
-      conseilsContainer.appendChild(div);
-    });
-  }
-
   // Fonction pour afficher les personnages dans la popup
-  function afficherPersonnages() {
+  function afficherPersonnages(personnages) {
     container.innerHTML = "";
     const selectedMap = mapSelector.value;
     const mapData = mapsData.find((map) => map.name === selectedMap);
@@ -128,20 +66,13 @@ document.addEventListener("DOMContentLoaded", function () {
       mapImage.style.display = "none";
     }
 
-    // Trier les personnages pour mettre les meilleurs agents de la carte sélectionnée en premier,
-    // puis les flasheurs, et enfin les autres personnages
+    // Trier les personnages pour mettre les best agents pour la carte en premier, puis les flasheurs
     personnages.sort((a, b) => {
-      if (bestAgents.includes(a.nom) && !bestAgents.includes(b.nom)) {
-        return -1;
-      } else if (!bestAgents.includes(a.nom) && bestAgents.includes(b.nom)) {
-        return 1;
-      } else if (a.flasheur && !b.flasheur) {
-        return -1;
-      } else if (!a.flasheur && b.flasheur) {
-        return 1;
-      } else {
-        return 0;
-      }
+      if (bestAgents.includes(a.nom) && !bestAgents.includes(b.nom)) return -1;
+      if (!bestAgents.includes(a.nom) && bestAgents.includes(b.nom)) return 1;
+      if (a.flasheur && !b.flasheur) return -1;
+      if (!a.flasheur && b.flasheur) return 1;
+      return 0;
     });
 
     personnages.forEach((personnage) => {
@@ -177,6 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
       div.appendChild(label);
       div.appendChild(checkbox);
       container.appendChild(div);
+
+      // Ajout de l'écouteur de clic sur toute la div
+      div.addEventListener("click", function () {
+        checkbox.checked = !checkbox.checked;
+      });
     });
 
     // Charger les sélections précédentes et cocher les checkboxes correspondantes
@@ -218,33 +154,24 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
 
+  // Ajoute un écouteur d'événements sur le sélecteur de carte
+  mapSelector.addEventListener("change", () =>
+    afficherPersonnages(personnages)
+  );
+
   // Ajoute un écouteur d'événements sur le bouton "Réinitialiser"
   resetButton.addEventListener("click", function () {
+    document
+      .querySelectorAll("#personnages-container input:checked")
+      .forEach((checkbox) => {
+        checkbox.checked = false;
+      });
     chrome.storage.local.remove("selectedPersonnages", function () {
-      document
-        .querySelectorAll("#personnages-container input:checked")
-        .forEach((checkbox) => {
-          checkbox.checked = false;
-        });
-      console.log("Sélections réinitialisées.");
+      console.log("Sélection réinitialisée avec succès.");
     });
   });
 
-  // Ajoute un écouteur d'événements sur le sélecteur de carte
-  mapSelector.addEventListener("change", () => afficherPersonnages());
-
-  // Ajoute un écouteur d'événements sur le sélecteur de catégorie de conseils
-  categorySelector.addEventListener("change", () => {
-    const selectedCategory = categorySelector.value;
-    if (selectedCategory) {
-      afficherConseils(selectedCategory);
-    } else {
-      conseilsContainer.innerHTML = "";
-    }
-  });
-
-  // Charger les personnages, les cartes et les conseils au démarrage de la popup
+  // Charger les personnages et les cartes au démarrage de la popup
   chargerCartes();
   chargerPersonnages();
-  chargerConseils();
 });

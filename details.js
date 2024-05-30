@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("agents-container");
+  const conseilsContainer = document.getElementById("conseils-container");
 
   async function loadAndDisplayPersonnages() {
     return new Promise((resolve, reject) => {
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (personnages.length > 0) {
           personnages.forEach(async (personnage) => {
             const div = document.createElement("div");
+            div.className = "personnage";
             const nom = document.createElement("h3");
             const role = document.createElement("p");
 
@@ -50,6 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
             // Ajouter la classe flasheur si c'est un flasheur
             if (personnage.flasheur) {
               div.classList.add("flasheur");
+            }
+
+            // Ajouter la classe best-agent si c'est un meilleur agent pour la carte sélectionnée
+            if (personnage.bestAgent) {
+              div.classList.add("best-agent");
             }
 
             container.appendChild(div);
@@ -83,7 +90,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Appel de la fonction pour charger et afficher les personnages
+  // Fonction pour charger et afficher les conseils
+  async function loadAndDisplayConseils() {
+    try {
+      const response = await fetch(chrome.runtime.getURL("conseils.json"));
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const conseils = await response.json();
+
+      for (const [category, conseilsArray] of Object.entries(conseils)) {
+        const categoryTitle = document.createElement("h3");
+        categoryTitle.textContent = category;
+        conseilsContainer.appendChild(categoryTitle);
+
+        conseilsArray.forEach((conseil) => {
+          const conseilDiv = document.createElement("div");
+          conseilDiv.className = "conseil";
+
+          const idee = document.createElement("h4");
+          idee.textContent = conseil.idée;
+          conseilDiv.appendChild(idee);
+
+          const note = document.createElement("p");
+          note.textContent = `Note: ${conseil.note}`;
+          conseilDiv.appendChild(note);
+
+          const explication = document.createElement("p");
+          explication.textContent = conseil.explication;
+          conseilDiv.appendChild(explication);
+
+          conseilsContainer.appendChild(conseilDiv);
+        });
+      }
+    } catch (error) {
+      console.error("Erreur lors du chargement des conseils :", error);
+    }
+  }
+
+  // Appel des fonctions pour charger et afficher les personnages et les conseils
   loadAndDisplayPersonnages()
     .then(() => {
       // Une fois les personnages chargés, rendre le bouton cliquable
@@ -115,4 +160,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => {
       console.error("Erreur lors du chargement des personnages :", error);
     });
+
+  loadAndDisplayConseils().catch((error) => {
+    console.error("Erreur lors du chargement des conseils :", error);
+  });
 });
