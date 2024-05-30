@@ -4,16 +4,23 @@ body {
   padding: 0;
   background-color: #4e2349;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 h1 {
   text-align: center;
+  width: 100%;
+  font-size: 2em;
 }
 
 #agents-container {
   margin: 20px auto;
   width: 80%;
-  max-width: 1200px; /* Increased max-width to accommodate more characters */
+  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -29,7 +36,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.2em;
 }
 
 button:hover {
@@ -43,8 +50,9 @@ button:hover {
   text-align: center;
   border-radius: 8px;
   background-color: #6c3483;
-  width: calc(20% - 10px); /* Adjusted width for more items per row */
-  box-sizing: border-box; /* Include padding and border in the width */
+  width: calc(20% - 10px);
+  box-sizing: border-box;
+  font-size: 1.2em;
 }
 
 .personnage img {
@@ -52,37 +60,64 @@ button:hover {
 }
 
 .personnage.flasheur {
-  background-color: yellow; /* Couleur pour les flasheurs */
+  background-color: yellow;
 }
 
 .personnage.best-agent {
-  background-color: lightgreen; /* Couleur pour les meilleurs agents */
+  background-color: lightgreen;
 }
 
 .personnage.flasheur.best-agent {
-  background-color: orange; /* Couleur différente si c'est à la fois un flasheur et un meilleur agent */
+  background-color: orange;
 }
 
 #conseils-container {
   margin: 20px auto;
-  width: 80%;
-  max-width: 600px;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.section-content {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column; /* Arrange items in columns */
+  justify-content: center;
+}
+
+.section h3 {
+  margin: 0 0 10px 0;
+  padding: 10px;
+  background-color: #5a2d68;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .conseil {
   border: 1px solid #ccc;
   padding: 15px;
-  margin: 10px 0;
+  margin: 5px;
   border-radius: 8px;
   background-color: #5a2d68;
+  box-sizing: border-box;
+  font-size: 1.2em;
 }
 
 .conseil h4 {
   margin-top: 0;
+  font-size: 1.4em;
 }
 
 .conseil p {
   margin: 5px 0;
+  font-size: 1em;
 }

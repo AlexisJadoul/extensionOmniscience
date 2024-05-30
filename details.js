@@ -104,6 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
         categoryTitle.textContent = category;
         conseilsContainer.appendChild(categoryTitle);
 
+        const sectionContent = document.createElement("div");
+        sectionContent.className = "section-content";
+        conseilsContainer.appendChild(sectionContent);
+
         conseilsArray.forEach((conseil) => {
           const conseilDiv = document.createElement("div");
           conseilDiv.className = "conseil";
@@ -120,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
           explication.textContent = conseil.explication;
           conseilDiv.appendChild(explication);
 
-          conseilsContainer.appendChild(conseilDiv);
+          sectionContent.appendChild(conseilDiv);
         });
       }
     } catch (error) {
