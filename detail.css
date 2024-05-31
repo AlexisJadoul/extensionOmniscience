@@ -5,10 +5,11 @@ body {
   background-color: #4e2349;
   color: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   min-height: 100vh;
   flex-direction: column;
+  width: 100%;
 }
 
 h1 {
@@ -28,7 +29,7 @@ h1 {
 
 button {
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin: 20px auto;
   background-color: #007bff;
@@ -76,8 +77,9 @@ button:hover {
   width: 90%;
   max-width: 1200px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-content: flex-start;
 }
 
 .section {
@@ -86,10 +88,9 @@ button:hover {
 }
 
 .section-content {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column; /* Arrange items in columns */
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .section h3 {
@@ -105,11 +106,11 @@ button:hover {
 .conseil {
   border: 1px solid #ccc;
   padding: 15px;
-  margin: 5px;
   border-radius: 8px;
   background-color: #5a2d68;
   box-sizing: border-box;
   font-size: 1.2em;
+  margin: 0 20px;
 }
 
 .conseil h4 {
@@ -118,6 +119,6 @@ button:hover {
 }
 
 .conseil p {
-  margin: 5px 0;
+  margin: 5px;
   font-size: 1em;
 }

@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
           personnages.forEach(async (personnage) => {
             const div = document.createElement("div");
             div.className = "personnage";
-            const nom = document.createElement("h3");
+            const nom = document.createElement("h4");
             const role = document.createElement("p");
 
             if (personnage.image) {
@@ -99,34 +99,34 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       const conseils = await response.json();
 
-      for (const [category, conseilsArray] of Object.entries(conseils)) {
-        const categoryTitle = document.createElement("h3");
-        categoryTitle.textContent = category;
-        conseilsContainer.appendChild(categoryTitle);
+      // for (const [category, conseilsArray] of Object.entries(conseils)) {
+      //   const categoryTitle = document.createElement("h3");
+      //   categoryTitle.textContent = category;
+      //   conseilsContainer.appendChild(categoryTitle);
 
-        const sectionContent = document.createElement("div");
-        sectionContent.className = "section-content";
-        conseilsContainer.appendChild(sectionContent);
+      //   const sectionContent = document.createElement("div");
+      //   sectionContent.className = "section-content";
+      //   conseilsContainer.appendChild(sectionContent);
 
-        conseilsArray.forEach((conseil) => {
-          const conseilDiv = document.createElement("div");
-          conseilDiv.className = "conseil";
+      //   conseilsArray.forEach((conseil) => {
+      //     const conseilDiv = document.createElement("div");
+      //     conseilDiv.className = "conseil";
 
-          const idee = document.createElement("h4");
-          idee.textContent = conseil.idée;
-          conseilDiv.appendChild(idee);
+      //     const idee = document.createElement("h4");
+      //     idee.textContent = conseil.idée;
+      //     conseilDiv.appendChild(idee);
 
-          const note = document.createElement("p");
-          note.textContent = `Note: ${conseil.note}`;
-          conseilDiv.appendChild(note);
+      //     const note = document.createElement("p");
+      //     note.textContent = `Note: ${conseil.note}`;
+      //     conseilDiv.appendChild(note);
 
-          const explication = document.createElement("p");
-          explication.textContent = conseil.explication;
-          conseilDiv.appendChild(explication);
+      //     const explication = document.createElement("p");
+      //     explication.textContent = conseil.explication;
+      //     conseilDiv.appendChild(explication);
 
-          sectionContent.appendChild(conseilDiv);
-        });
-      }
+      //     sectionContent.appendChild(conseilDiv);
+      //   });
+      // }
     } catch (error) {
       console.error("Erreur lors du chargement des conseils :", error);
     }
