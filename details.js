@@ -99,52 +99,73 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       const conseils = await response.json();
 
-      // for (const [category, conseilsArray] of Object.entries(conseils)) {
-      //   const categoryTitle = document.createElement("h3");
-      //   categoryTitle.textContent = category;
-      //   conseilsContainer.appendChild(categoryTitle);
+      for (const [category, conseilsArray] of Object.entries(conseils)) {
+        const sectionDiv = document.createElement("div");
+        sectionDiv.className = "section";
 
-      //   const sectionContent = document.createElement("div");
-      //   sectionContent.className = "section-content";
-      //   conseilsContainer.appendChild(sectionContent);
+        const categoryTitle = document.createElement("h3");
+        categoryTitle.textContent = category;
+        sectionDiv.appendChild(categoryTitle);
 
-      //   conseilsArray.forEach((conseil) => {
-      //     const conseilDiv = document.createElement("div");
-      //     conseilDiv.className = "conseil";
+        const sectionContent = document.createElement("div");
+        sectionContent.className = "section-content";
+        sectionDiv.appendChild(sectionContent);
 
-      //     const idee = document.createElement("h4");
-      //     idee.textContent = conseil.idée;
-      //     conseilDiv.appendChild(idee);
+        conseilsArray.forEach((conseil) => {
+          const conseilDiv = document.createElement("div");
+          conseilDiv.className = "conseil";
 
-      //     const note = document.createElement("p");
-      //     note.textContent = `Note: ${conseil.note}`;
-      //     conseilDiv.appendChild(note);
+          const idee = document.createElement("h4");
+          idee.textContent = conseil.idée;
+          conseilDiv.appendChild(idee);
 
-      //     const explication = document.createElement("p");
-      //     explication.textContent = conseil.explication;
-      //     conseilDiv.appendChild(explication);
+          const note = document.createElement("p");
+          note.textContent = `Note: ${conseil.note}`;
+          conseilDiv.appendChild(note);
 
-      //     sectionContent.appendChild(conseilDiv);
-      //   });
-      // }
+          const explication = document.createElement("p");
+          explication.textContent = conseil.explication;
+          conseilDiv.appendChild(explication);
+
+          sectionContent.appendChild(conseilDiv);
+        });
+
+        conseilsContainer.appendChild(sectionDiv);
+      }
     } catch (error) {
       console.error("Erreur lors du chargement des conseils :", error);
     }
   }
 
-  // Appel des fonctions pour charger et afficher les personnages et les conseils
   loadAndDisplayPersonnages()
     .then(() => {
       // Une fois les personnages chargés, rendre le bouton cliquable
       document
         .getElementById("save-pdf")
         .addEventListener("click", function () {
-          html2canvas(document.body)
+          // Définir les dimensions de la capture pour couvrir toute la page
+          const element = document.body;
+          const originalHeight = element.style.height;
+
+          element.style.height = `${document.documentElement.scrollHeight}px`;
+
+          html2canvas(element, {
+            scale: 3, // Augmente la résolution
+            useCORS: true, // Si vous avez des images externes
+            logging: true, // Pour le débogage
+            scrollX: 0, // Capture à partir du haut de la page
+            scrollY: 0, // Capture à partir du haut de la page
+            windowWidth: document.documentElement.scrollWidth, // Largeur totale de la page
+            windowHeight: document.documentElement.scrollHeight, // Hauteur totale de la page
+          })
             .then((canvas) => {
+              // Restaurer la hauteur d'origine
+              element.style.height = originalHeight;
+
               if (window.jspdf && window.jspdf.jsPDF) {
                 const { jsPDF } = window.jspdf;
-                const pdf = new jsPDF("p", "mm", "a4");
-                const imgWidth = 210;
+                const pdf = new jsPDF("l", "mm", "a4"); // Changer "p" en "l" pour paysage
+                const imgWidth = 297; // Largeur d'une page A4 en paysage
                 const imgHeight = (canvas.height * imgWidth) / canvas.width;
                 const imgData = canvas.toDataURL("image/png");
                 pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);

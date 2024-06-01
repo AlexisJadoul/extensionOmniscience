@@ -21,7 +21,7 @@ h1 {
 #agents-container {
   margin: 20px auto;
   width: 80%;
-  max-width: 1200px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -77,19 +77,19 @@ button:hover {
   width: 90%;
   max-width: 1200px;
   display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
+
+  justify-content: space-between;
   align-content: flex-start;
 }
 
 .section {
-  margin-bottom: 20px;
-  width: 100%;
+  margin: 40px; /* Espace entre les sections */
+  width: 300px;
 }
 
 .section-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column; /* S'assurer que les conseils sont empilés verticalement */
   gap: 20px;
 }
 
@@ -110,7 +110,8 @@ button:hover {
   background-color: #5a2d68;
   box-sizing: border-box;
   font-size: 1.2em;
-  margin: 0 20px;
+  margin: 0 0 20px 0; /* Espacement vertical entre les conseils */
+  width: 100%;
 }
 
 .conseil h4 {
@@ -120,5 +121,5 @@ button:hover {
 
 .conseil p {
   margin: 5px;
-  font-size: 1em;
+  font-size: 1em; /* Réduire la taille de police pour éviter le débordement */
 }
