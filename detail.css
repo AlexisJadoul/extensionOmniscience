@@ -73,9 +73,9 @@ button:hover {
 }
 
 #conseils-container {
-  margin: 20px auto;
+  margin: 60px;
   width: 90%;
-  max-width: 1200px;
+
   display: flex;
 
   justify-content: space-between;
@@ -84,13 +84,14 @@ button:hover {
 
 .section {
   margin: 40px; /* Espace entre les sections */
-  width: 300px;
+  width: 300px !important;
 }
 
 .section-content {
   display: flex;
   flex-direction: column; /* S'assurer que les conseils sont empilés verticalement */
-  gap: 20px;
+  gap: 30px;
+  width: 380px;
 }
 
 .section h3 {
@@ -121,5 +122,5 @@ button:hover {
 
 .conseil p {
   margin: 5px;
-  font-size: 1em; /* Réduire la taille de police pour éviter le débordement */
+  font-size: 1.8em; /* Réduire la taille de police pour éviter le débordement */
 }
