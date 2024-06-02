@@ -74,7 +74,18 @@
       "explication": "Essaie de garder une attitude positive, même en cas de défaite. Encourage tes coéquipiers et félicite-les pour leurs bonnes actions."
     }
   ],
-
+  "Analyse et amélioration": [
+    {
+      "idée": "Replays",
+      "note": 3,
+      "explication": "Regarde les replays de tes parties pour identifier tes points faibles et comprendre les erreurs stratégiques."
+    },
+    {
+      "idée": "Feedback",
+      "note": 3,
+      "explication": "Demande des feedbacks constructifs à tes amis ou à des joueurs plus expérimentés."
+    }
+  ],
   "Aim": [
     {
       "idée": "Aim Calme",
