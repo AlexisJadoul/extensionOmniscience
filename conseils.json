@@ -64,6 +64,11 @@
   ],
   "Mentalité (Mindset)": [
     {
+      "idée": "Focus Permanent",
+      "note": 5,
+      "explication": "Soyez constamment concentré sur le placement du réticule. Adoptez une mentalité de réticule en permanence."
+    },
+    {
       "idée": "Objectifs réalistes",
       "note": 4,
       "explication": "Fixe-toi des objectifs réalistes pour chaque session de jeu. Cela peut être d'améliorer ton aim, de travailler sur ta communication, etc."
@@ -74,7 +79,6 @@
       "explication": "Essaie de garder une attitude positive, même en cas de défaite. Encourage tes coéquipiers et félicite-les pour leurs bonnes actions."
     }
   ],
-
   "Aim": [
     {
       "idée": "Aim Calme",
@@ -95,6 +99,137 @@
       "idée": "Respect des Mécaniques des Armes",
       "note": 4,
       "explication": "Connais les limites de chaque arme, comme la précision du premier tir, les schémas de recul et les temps de réinitialisation de précision."
+    }
+  ],
+  "Déplacement": [
+    {
+      "idée": "Avantage de la Perspective",
+      "note": 5,
+      "explication": "Plus vous êtes éloigné d'un mur, plus vous avez de visibilité. Restez loin des murs pour avoir un avantage visuel sur les ennemis."
+    },
+    {
+      "idée": "Mouvements Latéraux",
+      "note": 5,
+      "explication": "Déplacez-vous toujours latéralement (de gauche à droite), jamais en diagonale ou en avant/arrière. Apprenez à faire des contre-strafs (s'arrêter en appuyant sur la touche opposée)."
+    },
+    {
+      "idée": "Arrêtez-vous pour Tirer",
+      "note": 5,
+      "explication": "Soyez immobile avant de tirer pour avoir une meilleure précision. Attendez que l'ennemi vous pique tout en étant immobile pour avoir un temps de réaction plus court."
+    },
+    {
+      "idée": "Déplacement sur la Carte",
+      "note": 4,
+      "explication": "Déplacez-vous latéralement en entrant dans des lignes de tir. Ne vous déplacez pas en diagonale ou en avant."
+    },
+    {
+      "idée": "Sidestep",
+      "note": 4,
+      "explication": "Si vous êtes surpris par un ennemi, faites un pas de côté pour esquiver ses balles avant de tirer."
+    },
+    {
+      "idée": "Entraînement",
+      "note": 4,
+      "explication": "Entraînez-vous à vous déplacer latéralement en range et à utiliser le contre-strafe. Entraînez-vous également à vous arrêter avant de tirer en jouant des matchs à mort."
+    },
+    {
+      "idée": "Positionnement",
+      "note": 4,
+      "explication": "Évitez de vous coller aux murs, sauf dans des situations spécifiques où l'effet de surprise est nécessaire. Cela vous donne généralement un désavantage."
+    }
+  ],
+  "Crosshair placement ": [
+    {
+      "idée": "Hauteur de la Tête",
+      "note": 5,
+      "explication": "Gardez le réticule à la hauteur de la tête en utilisant les lignes de la carte comme guide."
+    },
+    {
+      "idée": "Distance du Mur",
+      "note": 5,
+      "explication": "Placez votre réticule loin du mur car les ennemis swinguent souvent large. Ne collez pas le réticule au mur."
+    },
+    {
+      "idée": "Anticipation des Angles",
+      "note": 5,
+      "explication": "Ajustez la distance du réticule en fonction de la distance de l'ennemi par rapport au mur. Plus l'ennemi est proche du mur, plus le réticule doit être éloigné."
+    },
+    {
+      "idée": "Décalage de Ligne",
+      "note": 5,
+      "explication": "Décalez ligne par ligne en gardant le réticule à la bonne hauteur et distance, et en anticipant les mouvements des ennemis."
+    },
+    {
+      "idée": "Entraînement",
+      "note": 4,
+      "explication": "Entraînez-vous en match à mort pour maintenir un placement constant du réticule, apprendre à swingu de manière large et pratiquer les mouvements latéraux."
+    }
+  ],
+
+  "Crosshair placement": [
+    {
+      "idée": "Hauteur de la Tête",
+      "note": 5,
+      "explication": "Gardez le réticule à la hauteur de la tête en utilisant les lignes de la carte comme guide."
+    },
+    {
+      "idée": "Distance du Mur",
+      "note": 5,
+      "explication": "Placez votre réticule loin du mur car les ennemis swinguent souvent large. Ne collez pas le réticule au mur."
+    },
+    {
+      "idée": "Anticipation des Angles",
+      "note": 5,
+      "explication": "Ajustez la distance du réticule en fonction de la distance de l'ennemi par rapport au mur. Plus l'ennemi est proche du mur, plus le réticule doit être éloigné."
+    },
+    {
+      "idée": "Décalage de Ligne",
+      "note": 5,
+      "explication": "Décalez ligne par ligne en gardant le réticule à la bonne hauteur et distance, et en anticipant les mouvements des ennemis."
+    },
+    {
+      "idée": "Entraînement",
+      "note": 4,
+      "explication": "Entraînez-vous en match à mort pour maintenir un placement constant du réticule, apprendre à swingu de manière large et pratiquer les mouvements latéraux."
+    }
+  ],
+  "Conseils généraux": [
+    {
+      "idée": "Conditionnement Mental",
+      "note": 5,
+      "explication": "Visualiser le mouvement et anticiper l'ennemi. Se préparer mentalement à chaque duel en se disant 'Je vais piquer et tuer l'ennemi'. Maintenir une concentration intense sans se laisser distraire."
+    },
+    {
+      "idée": "Protocole de Mouvement",
+      "note": 5,
+      "explication": "Avancer méthodiquement en vérifiant chaque angle (ligne par ligne). Ne jamais coller au mur, toujours décaler de droite à gauche. Garder un placement de viseur (crosshair placement) optimal, toujours prêt à tirer."
+    },
+    {
+      "idée": "Perspective Advantage",
+      "note": 5,
+      "explication": "Maintenir une bonne distance du mur pour avoir un avantage de perspective. Être prêt à l'impact dès qu'on pique une ligne."
+    },
+    {
+      "idée": "Mouvements Spécifiques",
+      "note": 4,
+      "explication": "Toujours se déplacer de gauche à droite, jamais d'avant en arrière. Apprendre à se déplacer et s'arrêter pour avoir un meilleur tir. Être prêt à arrêter et viser quand un ennemi est attendu."
+    },
+
+    {
+      "idée": "Répétition et Habitude",
+      "note": 4,
+      "explication": "Répéter les mouvements et le conditionnement jusqu'à ce que cela devienne une seconde nature. Plus on pratique, plus le conditionnement devient facile et rapide."
+    },
+
+    {
+      "idée": "Gestion des Duels",
+      "note": 4,
+      "explication": "Respecter le protocole pour maximiser les chances de gagner les duels. Savoir qu'il y a des moments où même en faisant tout parfaitement, l'adversaire peut être meilleur."
+    },
+    {
+      "idée": "Anticipation et Réaction",
+      "note": 4,
+      "explication": "Se préparer mentalement à chaque duel comme s'il était inévitable. Ne jamais hésiter une fois le mouvement engagé, être sûr de soi."
     }
   ]
 }
