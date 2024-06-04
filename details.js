@@ -137,50 +137,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  async function generatePNG() {
+    const canvas = await html2canvas(document.body, {
+      useCORS: true, // Utiliser CORS si vous avez des images externes
+    });
+    const imgData = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = imgData;
+    link.download = "detail-page.png";
+    link.click();
+  }
+
   loadAndDisplayPersonnages()
     .then(() => {
-      // Une fois les personnages chargés, rendre le bouton cliquable
       document
-        .getElementById("save-pdf")
-        .addEventListener("click", function () {
-          // Définir les dimensions de la capture pour couvrir toute la page
-          const element = document.body;
-          const originalHeight = element.style.height;
-
-          element.style.height = `${document.documentElement.scrollHeight}px`;
-
-          html2canvas(element, {
-            scale: 3, // Augmente la résolution
-            useCORS: true, // Si vous avez des images externes
-            logging: true, // Pour le débogage
-            scrollX: 0, // Capture à partir du haut de la page
-            scrollY: 0, // Capture à partir du haut de la page
-            windowWidth: document.documentElement.scrollWidth, // Largeur totale de la page
-            windowHeight: document.documentElement.scrollHeight, // Hauteur totale de la page
-          })
-            .then((canvas) => {
-              // Restaurer la hauteur d'origine
-              element.style.height = originalHeight;
-
-              if (window.jspdf && window.jspdf.jsPDF) {
-                const { jsPDF } = window.jspdf;
-                const pdf = new jsPDF("l", "mm", "a4"); // Changer "p" en "l" pour paysage
-                const imgWidth = 297; // Largeur d'une page A4 en paysage
-                const imgHeight = (canvas.height * imgWidth) / canvas.width;
-                const imgData = canvas.toDataURL("image/png");
-                pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-                pdf.save("detail-page.pdf");
-              } else {
-                console.error("jsPDF n'est pas chargé correctement.");
-              }
-            })
-            .catch((error) => {
-              console.error(
-                "Erreur lors de la capture avec html2canvas :",
-                error
-              );
-            });
-        });
+        .getElementById("save-png")
+        .addEventListener("click", generatePNG);
     })
     .catch((error) => {
       console.error("Erreur lors du chargement des personnages :", error);
