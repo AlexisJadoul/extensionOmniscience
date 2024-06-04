@@ -99,60 +99,71 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       const conseils = await response.json();
 
-      for (const [category, conseilsArray] of Object.entries(conseils)) {
-        const sectionDiv = document.createElement("div");
-        sectionDiv.className = "section";
+      chrome.storage.local.get("selectedConseils", function (result) {
+        const selectedConseils = result.selectedConseils || [];
+        selectedConseils.forEach((selectedConseil) => {
+          for (const [category, conseilsArray] of Object.entries(conseils)) {
+            if (category === selectedConseil) {
+              const sectionDiv = document.createElement("div");
+              sectionDiv.className = "section";
 
-        const categoryTitle = document.createElement("h3");
-        categoryTitle.textContent = category;
-        sectionDiv.appendChild(categoryTitle);
+              const categoryTitle = document.createElement("h3");
+              categoryTitle.textContent = category;
+              sectionDiv.appendChild(categoryTitle);
 
-        const sectionContent = document.createElement("div");
-        sectionContent.className = "section-content";
-        sectionDiv.appendChild(sectionContent);
+              conseilsArray.forEach((conseil) => {
+                const conseilDiv = document.createElement("div");
+                conseilDiv.className = "conseil";
 
-        conseilsArray.forEach((conseil) => {
-          const conseilDiv = document.createElement("div");
-          conseilDiv.className = "conseil";
+                const idee = document.createElement("h4");
+                idee.textContent = conseil.idée;
+                conseilDiv.appendChild(idee);
 
-          const idee = document.createElement("h4");
-          idee.textContent = conseil.idée;
-          conseilDiv.appendChild(idee);
+                const note = document.createElement("p");
+                note.textContent = `Note: ${conseil.note}`;
+                conseilDiv.appendChild(note);
 
-          const note = document.createElement("p");
-          note.textContent = `Note: ${conseil.note}`;
-          conseilDiv.appendChild(note);
+                const explication = document.createElement("p");
+                explication.textContent = conseil.explication;
+                conseilDiv.appendChild(explication);
 
-          const explication = document.createElement("p");
-          explication.textContent = conseil.explication;
-          conseilDiv.appendChild(explication);
+                sectionDiv.appendChild(conseilDiv);
+              });
 
-          sectionContent.appendChild(conseilDiv);
+              conseilsContainer.appendChild(sectionDiv);
+            }
+          }
         });
-
-        conseilsContainer.appendChild(sectionDiv);
-      }
+      });
     } catch (error) {
       console.error("Erreur lors du chargement des conseils :", error);
     }
   }
 
-  async function generatePNG() {
-    const canvas = await html2canvas(document.body, {
-      useCORS: true, // Utiliser CORS si vous avez des images externes
-    });
-    const imgData = canvas.toDataURL("image/png");
-    const link = document.createElement("a");
-    link.href = imgData;
-    link.download = "detail-page.png";
-    link.click();
-  }
-
   loadAndDisplayPersonnages()
     .then(() => {
       document
-        .getElementById("save-png")
-        .addEventListener("click", generatePNG);
+        .getElementById("save-image")
+        .addEventListener("click", function () {
+          html2canvas(document.body, {
+            scale: 2,
+            useCORS: true,
+          })
+            .then((canvas) => {
+              const link = document.createElement("a");
+              link.href = canvas.toDataURL("image/png");
+              link.download = `detail-page-${new Date().toLocaleTimeString(
+                "fr-FR"
+              )}.png`;
+              link.click();
+            })
+            .catch((error) => {
+              console.error(
+                "Erreur lors de la capture avec html2canvas :",
+                error
+              );
+            });
+        });
     })
     .catch((error) => {
       console.error("Erreur lors du chargement des personnages :", error);

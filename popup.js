@@ -3,8 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const mapSelector = document.getElementById("map-selector");
   const mapImage = document.getElementById("map-image");
   const resetButton = document.getElementById("reset-selection");
+  const conseilsContainer = document.getElementById("conseils-container");
   let personnages = [];
   let mapsData = [];
+  let conseilsData = [];
+  let selectedConseils = [];
 
   // Charger les personnages depuis un fichier JSON
   function chargerPersonnages() {
@@ -49,6 +52,66 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     };
     xhr.send();
+  }
+
+  // Charger les conseils depuis un fichier JSON
+  function chargerConseils() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", chrome.runtime.getURL("conseils.json"), true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        conseilsData = JSON.parse(xhr.responseText);
+        afficherCategoriesConseils(conseilsData);
+      } else {
+        console.error(
+          "Erreur lors du chargement du fichier JSON:",
+          xhr.statusText
+        );
+      }
+    };
+    xhr.onerror = function () {
+      console.error(
+        "Erreur réseau lors de la tentative de chargement du fichier JSON."
+      );
+    };
+    xhr.send();
+  }
+
+  // Fonction pour afficher les catégories de conseils
+  function afficherCategoriesConseils(conseils) {
+    conseilsContainer.innerHTML = "";
+    Object.keys(conseils).forEach((category) => {
+      const div = document.createElement("div");
+      div.className = "categorie-conseil";
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.id = category;
+      checkbox.value = category;
+      checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+          if (selectedConseils.length < 5) {
+            selectedConseils.push(category);
+          } else {
+            checkbox.checked = false;
+            alert("Vous pouvez sélectionner jusqu'à 5 catégories seulement.");
+          }
+        } else {
+          const index = selectedConseils.indexOf(category);
+          if (index > -1) {
+            selectedConseils.splice(index, 1);
+          }
+        }
+      });
+
+      const label = document.createElement("label");
+      label.htmlFor = category;
+      label.textContent = category;
+
+      div.appendChild(checkbox);
+      div.appendChild(label);
+      conseilsContainer.appendChild(div);
+    });
   }
 
   // Fonction pour afficher les personnages dans la popup
@@ -121,14 +184,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Fonction pour charger les sélections précédentes du stockage local
   function chargerSelectionsPrecedentes() {
-    chrome.storage.local.get("selectedPersonnages", function (result) {
-      if (result.selectedPersonnages) {
-        result.selectedPersonnages.forEach((personnage) => {
-          const checkbox = document.getElementById(personnage.id);
-          if (checkbox) checkbox.checked = true;
-        });
+    chrome.storage.local.get(
+      ["selectedPersonnages", "selectedConseils"],
+      function (result) {
+        if (result.selectedPersonnages) {
+          result.selectedPersonnages.forEach((personnage) => {
+            const checkbox = document.getElementById(personnage.id);
+            if (checkbox) checkbox.checked = true;
+          });
+        }
+        if (result.selectedConseils) {
+          result.selectedConseils.forEach((conseil) => {
+            const checkbox = document.getElementById(conseil);
+            if (checkbox) checkbox.checked = true;
+            selectedConseils.push(conseil);
+          });
+        }
       }
-    });
+    );
   }
 
   // Ajoute un écouteur d'événements sur le bouton "Sauvegarder"
@@ -142,7 +215,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       chrome.storage.local.set(
-        { selectedPersonnages: selectedPersonnages },
+        {
+          selectedPersonnages: selectedPersonnages,
+          selectedConseils: selectedConseils,
+        },
         function () {
           console.log("Sélection sauvegardée avec succès.");
           document.getElementById("confirmation-message").style.display =
@@ -166,12 +242,22 @@ document.addEventListener("DOMContentLoaded", function () {
       .forEach((checkbox) => {
         checkbox.checked = false;
       });
-    chrome.storage.local.remove("selectedPersonnages", function () {
-      console.log("Sélection réinitialisée avec succès.");
-    });
+    document
+      .querySelectorAll("#conseils-container input:checked")
+      .forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+    selectedConseils = [];
+    chrome.storage.local.remove(
+      ["selectedPersonnages", "selectedConseils"],
+      function () {
+        console.log("Sélection réinitialisée avec succès.");
+      }
+    );
   });
 
-  // Charger les personnages et les cartes au démarrage de la popup
+  // Charger les personnages, les cartes et les conseils au démarrage de la popup
   chargerCartes();
   chargerPersonnages();
+  chargerConseils();
 });
